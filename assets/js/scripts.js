@@ -1,9 +1,8 @@
-// Ensure that the DOM is fully loaded before trying to attach the popover
+// Ensure that the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Example of using modern features: Query Selector and Event Listeners
     const popoverTriggerEl = document.querySelector('#mobilePopover');
     if (popoverTriggerEl) {
-        new bootstrap.Popover(popoverTriggerEl); // Assuming Bootstrap's JS is included
+        new bootstrap.Popover(popoverTriggerEl); 
     }
 
     document.querySelectorAll('.nav-masthead .nav-link').forEach(link => {
@@ -21,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('offcanvasChat').addEventListener('hidden.bs.offcanvas', function () {
         closeChat();
     });
+    
 
 });
 
