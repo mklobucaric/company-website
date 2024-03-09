@@ -14,6 +14,10 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/styles.css" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   </head>
   <body class="d-flex flex-column h-100">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -88,6 +92,12 @@
         <path d="M11.5 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m-10 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zM5 3a1 1 0 0 0-1 1h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0zm0 1h3v3H5zm6.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
         <path d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2zm1 11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/>
       </symbol>
+
+      <symbol id="home" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+      </symbol>
+
+
     </svg>
 
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
@@ -120,21 +130,30 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
-      <h3 class="float-start mb-0 text-body-emphasis">techXflow d.o.o.</h3>
+      <h3 class="float-start mb-0 text-body-emphasis raleway-name">techXflow d.o.o.</h3>
       <nav class="nav nav-masthead justify-content-center float-end">
         <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#about">About</a>
         <a class="nav-link fw-bold py-1 px-0" href="#services">Services</a>
-        <a class="nav-link fw-bold py-1 px-0 d-none" href="#">AI/ML</a>
+        <a class="nav-link fw-bold py-1 px-0" href="#examples">Examples</a>
+        <a class="language-container py-1 px-0 d-flex align-items-center" href="#">
+          <img alt="German Flag" id="germanFlag" src="assets/image/de.svg" style="height: 20px; vertical-align: middle;" />
+        </a>
+
+        <a class="language-container py-1 px-0 d-flex align-items-center" href="#">
+          <img alt="Croatian Flag" id="croatianFlag" src="assets/image/hr.svg" style="height: 20px; vertical-align: middle;" />
+        </a>
+
+        <!-- <a class="nav-link fw-bold py-1 px-0 d-none" href="#">AI/ML</a> -->
       </nav>
     </div>
   </header>
 
   <main>
     <div class="b-divider-top"></div>
-    <h1 id="about">About</h1>
+    <h1 class="pb-1 border-bottom " id="about">About</h1>
 
     <p class="lead py-2">For more information, possible cooperation or contact see following:</p>
-    <div class="container px-4 py-3" id="icon-grid">
+    <div class="container px-4 py-3 pb-5" id="icon-grid">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         <div class="col d-flex align-items-start">
           <a class="link-body-emphasis text-decoration-none" href="https://mklobucaric.github.io">
@@ -143,9 +162,12 @@
           </a>
         </div>
         <div class="col d-flex align-items-start">
-          <a class="link-body-emphasis text-decoration-none" href="https://www.linkedin.com/in/mario-klobu%C4%8Dari%C4%87-1902a64">
-            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#linkedin"/></svg>
-            <span class="fw-bold mb-0 fs-4">LinkedIn</span>
+          <span class="link-body-emphasis text-decoration-none" data-bs-toggle="popover" title="Location" 
+          data-bs-placement="top" id="homePopover" role="button" tabindex="0" data-bs-content="Travnička 55A<br>40 000 Čakovec
+          <br>Međimurje County<br>Croatia" data-bs-html="true">
+            <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"/></svg>
+            <span class="fw-bold mb-0 fs-4">Location</span>
+          </span>
           </a>
         </div>
         <div class="col d-flex align-items-start">
@@ -165,10 +187,10 @@
       </div>
     </div>
 
-    <h2 class="pb-2 border-bottom py-5" id="services">Services</h2>
+    <h2 class=" pb-1 border-bottom" id="services">Services</h2>
     <div class="container px-4 py-2" id="icon-grid">
  
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-2">
         <div class="col d-flex align-items-start">
           <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#code"/></svg>
           <div>
@@ -240,6 +262,110 @@
       </div>
     </div>
 
+    <h2 class="pb-1 border-bottom" id="examples">Examples of AI/ML applications</h2>
+
+    <div class="accordion accordion-flush py-2" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Personal/Business AI Assistant with RAG Technology
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Empower your business with AI-driven personal assistants capable of fetching company data through advanced Retrieval-Augmented 
+            Generation (RAG) technology. The solution facilitates translations, summaries, and intelligent user interactions, streamlining communication and decision-making 
+            processes.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Knowledge Base Construction with RAG
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Create dynamic knowledge bases using RAG technology for instant access to policies, guidelines, and technical documentation. 
+            Enable your team to perform quick, efficient searches, reducing the time spent looking for crucial information.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            LLM-Powered Question-Answering Systems
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Implement question-answering systems powered by the latest Language Learning Models (LLMs) to help your employees find information swiftly.
+           From text or voice queries to comprehensive answers in the user's language. Systems enhance internal communication and knowledge sharing.</div>
+        </div>
+      </div>
+
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseOne">
+            Automated Data Extraction and Integration
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Automate the extraction of information from forms, emails, or scanned documents using machine learning and LLMs. 
+            Services include populating spreadsheets or databases with the extracted data and integrating it directly into (accounting, inventory, or expense management) 
+            user systems.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseTwo">
+            ML-Based Document Categorization
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Train machine learning models to categorize invoices, receipts, or documents by vendor, expense category, or project. 
+            Utilize image recognition and OCR capabilities to extract key data fields for seamless integration into user (financial) systems.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseThree">
+            Advanced Text Analysis
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Transform text data handling with ML-powered text classification, entity extraction, and sentiment analysis. 
+            Advanced ML models enable deep understanding of textual content. This approach not only streamlines data management but also enhances content analysis, 
+            enabling swift access to critical insights and supporting strategic decision-making.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseOne">
+            Enhanced Image Recognition
+          </button>
+        </h2>
+        <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Manage and interpret image data with ML-driven classification and object detection. Tailored to identify and categorize visual content 
+            accurately, the solution facilitates efficient organization and analysis of images, empowering businesses to make informed decisions based on visual insights.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Machine Learning for Regression and Prediction
+          </button>
+        </h2>
+        <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Advance business forecasting with ML-based regression and prediction services. Algorithms are specifically designed to analyze 
+            historical data and identify patterns, enabling accurate forecasting and comprehensive trend analysis.
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
   </main>
   
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasChat" aria-labelledby="offcanvasChatLabel">
@@ -248,16 +374,16 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <p>Chat about AI Novel stored in RAG.</p>
+      <p>Chat about AI Novel stored in RAG. <br> In development...</p>
     </div>
   </div>
 
   <footer class="footer mt-auto text-white-50 py-3">
     <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-      <p>&copy; techXflow d.o.o. All rights reserved. info@techXflow.xyz +385 99 265 63 98</p>
+      <p>&copy; techXflow d.o.o. All rights reserved. info@techXflow.xyz +385 99 265 63 98 VAT:77667819758</p>
       <ul class="list-unstyled d-flex">
         <a class="link-body-emphasis" href="https://mklobucaric.github.io"><svg class="bi" width="24" height="24"><use xlink:href="#globe2"/></svg></a></li>
-        <li class="ms-3"><a class="link-body-emphasis" href="https://www.linkedin.com/in/mario-klobu%C4%8Dari%C4%87-1902a64"><svg class="bi" width="24" height="24"><use xlink:href="#linkedin"/></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="https://www.linkedin.com/in/mklobucaric"><svg class="bi" width="24" height="24"><use xlink:href="#linkedin"/></svg></a></li>
         <li class="ms-3"><a class="link-body-emphasis" href="https://github.com/mklobucaric"><svg class="bi" width="24" height="24"><use xlink:href="#github"/></svg></a></li>
         <li class="ms-3"><a class="link-body-emphasis d-none" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter-x"/></svg></a></li>
       </ul>

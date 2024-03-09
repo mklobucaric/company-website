@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
         new bootstrap.Popover(popoverTriggerEl); 
     }
 
+    const popoverTriggerHome = document.querySelector('#homePopover');
+    if (popoverTriggerHome) {
+        new bootstrap.Popover(popoverTriggerHome); 
+    }
+
     document.querySelectorAll('.nav-masthead .nav-link').forEach(link => {
         link.addEventListener('click', function() {
             document.querySelectorAll('.nav-masthead .nav-link.active').forEach(activeLink => {
