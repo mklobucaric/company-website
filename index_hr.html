@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Declares the document type and version of HTML -->
-<html lang="en" class="h-100" data-bs-theme="dark">
+<html lang="hr" class="h-100" data-bs-theme="dark">
   <!-- Starts the HTML document, sets language to English, applies 100% height class, and sets a data attribute for dark theme -->
   <head>
     <meta charset="utf-8" />
@@ -265,16 +265,24 @@
                 class="nav-link fw-bold py-1 px-0 me-3 active"
                 aria-current="page"
                 href="#about"
-                >About
+                >Info
               </a>
-              <a class="nav-link fw-bold py-1 px-0" href="#services"
-                >Services
-              </a>
+              <a class="nav-link fw-bold py-1 px-0" href="#services">Usluge </a>
               <a class="nav-link fw-bold py-1 px-0" href="#examples"
-                >Examples
+                >AI primjene
               </a>
 
               <!-- Language selection links with flags as indicators -->
+              <a
+                class="language-container py-1 px-0 d-flex align-items-center"
+                href="index.html"
+              >
+                <img
+                  alt="British Flag"
+                  id="britishFlag"
+                  src="assets/image/gb.svg"
+                />
+              </a>
               <a
                 class="language-container py-1 px-0 d-flex align-items-center"
                 href="index_de.html"
@@ -283,17 +291,6 @@
                   alt="German Flag"
                   id="germanFlag"
                   src="assets/image/de.svg"
-                />
-              </a>
-              <a
-                class="language-container py-1 px-0 d-flex align-items-center"
-                href="index_hr.html"
-              >
-                <img
-                  class="mt-2"
-                  alt="Croatian Flag"
-                  id="croatianFlag"
-                  src="assets/image/hr.svg"
                 />
               </a>
 
@@ -307,11 +304,12 @@
       <!-- Main content area -->
       <main>
         <!-- Section title - About -->
-        <h1 class="pb-1 border-bottom mt-5" id="about">About</h1>
+        <h1 class="pb-1 border-bottom mt-5" id="about">Info</h1>
 
         <!-- Lead paragraph introducing the section -->
         <p class="lead py-2">
-          For more information, possible cooperation or contact see following:
+          Za više informacija i moguću suradnju ili kontakt pogledajte
+          slijedeće:
         </p>
 
         <!-- Container for a grid of icons/links -->
@@ -336,20 +334,21 @@
                   <use xlink:href="#globe2" />
                 </svg>
                 <!-- Text label for the link -->
-                <span class="fw-bold mb-0 fs-4">Personal Site</span>
+                <span class="fw-bold mb-0 fs-4">Osobna</span>
+                <span class="fw-bold ms-5 fs-4">webstranica</span>
               </a>
             </div>
             <div class="col d-flex align-items-start">
               <span
                 class="link-body-emphasis text-decoration-none"
                 data-bs-toggle="popover"
-                title="Location"
+                title="Adresa"
                 data-bs-placement="top"
                 id="homePopover"
                 role="button"
                 tabindex="0"
                 data-bs-content="Travnička 55A<br>40 000 Čakovec
-          <br>Međimurje County<br>Croatia"
+          <br>Međimurska županija<br>Hravatska"
                 data-bs-html="true"
               >
                 <svg
@@ -359,7 +358,7 @@
                 >
                   <use xlink:href="#home" />
                 </svg>
-                <span class="fw-bold mb-0 fs-4">Location</span>
+                <span class="fw-bold mb-0 fs-4">Adresa</span>
               </span>
             </div>
             <div class="col d-flex align-items-start">
@@ -383,7 +382,7 @@
               <span
                 class="link-body-emphasis text-decoration-none"
                 data-bs-toggle="popover"
-                title="Call"
+                title="Nazovi"
                 data-bs-placement="top"
                 id="mobilePopover"
                 role="button"
@@ -397,14 +396,14 @@
                 >
                   <use xlink:href="#mobile" />
                 </svg>
-                <span class="fw-bold mb-0 fs-4">Mobile</span>
+                <span class="fw-bold mb-0 fs-4">Mobitel</span>
               </span>
             </div>
           </div>
         </div>
 
         <!-- Section title - Services -->
-        <h2 class="pb-1 border-bottom" id="services">Services</h2>
+        <h2 class="pb-1 border-bottom" id="services">Usluge</h2>
         <div class="container px-4 py-2" id="icon-grid1">
           <div
             class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-2"
@@ -418,10 +417,8 @@
                 <use xlink:href="#code" />
               </svg>
               <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Software</h3>
-                <p>
-                  Development: <br />Python <br />Flutter <br />Embedded C++
-                </p>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Softver</h3>
+                <p>Razvoj: <br />Python <br />Flutter <br />Embedded C++</p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
@@ -435,8 +432,8 @@
               <div>
                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">AI</h3>
                 <p>
-                  LLM Implementation: <br />ChatGPT <br />Gemini <br />LLM
-                  Finetuning
+                  LLM implementacija: <br />ChatGPT <br />Gemini <br />LLM
+                  finougađanje
                 </p>
               </div>
             </div>
@@ -451,7 +448,7 @@
               <div>
                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">AI</h3>
                 <p>
-                  AI Agents <br />
+                  AI Agenti <br />
                   Retrieval-Augmented Generation (RAG)
                 </p>
               </div>
@@ -467,8 +464,8 @@
               <div>
                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Data</h3>
                 <p>
-                  Analysis <br />
-                  Preprocessing: <br />
+                  Analiza <br />
+                  Predobrada: <br />
                   Data Cleaning <br />
                   Feature engineering
                 </p>
@@ -484,7 +481,7 @@
               </svg>
               <div>
                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">ML</h3>
-                <p>Classification <br />Regression <br />Prediction</p>
+                <p>Klasifikacija <br />Regresija <br />Predviđanje</p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
@@ -496,8 +493,8 @@
                 <use xlink:href="#cloud" />
               </svg>
               <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Cloud</h3>
-                <p>Services: <br />Google Cloud Platform</p>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Oblak</h3>
+                <p>Usluge: <br />Google Cloud Platform</p>
               </div>
             </div>
             <div class="col d-flex align-items-start">
@@ -511,8 +508,8 @@
               <div>
                 <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Business</h3>
                 <p>
-                  Project Management <br />
-                  Business Development
+                  Upravljanje projektima <br />
+                  Razvoj poslovanja
                 </p>
               </div>
             </div>
@@ -525,9 +522,10 @@
                 <use xlink:href="#embedded" />
               </svg>
               <div>
-                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Other</h3>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Ostalo</h3>
                 <p>
-                  Areas of Interest: Robotics, IoT, Automation, Embedded systems
+                  Područja interesa: Robotika, IoT, Automatizacija, Ugradbeni
+                  računalni sustavi
                 </p>
               </div>
             </div>
@@ -536,7 +534,7 @@
 
         <!-- Section title - Examples -->
         <h2 class="pb-1 border-bottom" id="examples">
-          Examples of AI/ML applications
+          Primjeri primjene AI/ML applikacija
         </h2>
 
         <div class="accordion accordion-flush py-2" id="accordionFlushExample">
@@ -550,7 +548,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
               >
-                Personal/Business AI Assistant with RAG Technology
+                Osobni/poslovni AI asistent s RAG tehnologijom
               </button>
             </h2>
             <div
@@ -559,11 +557,11 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Empower your business with AI-driven personal assistants capable
-                of fetching company data through advanced Retrieval-Augmented
-                Generation (RAG) technology. The solution facilitates
-                translations, summaries, and intelligent user interactions,
-                streamlining communication and decision-making processes.
+                Unaprijedite svoje poslovanje AI pogonjenim osobnim asistentima
+                koji mogu dohvatiti podatke o poduzeću kroz naprednu tehnologiju
+                Retrieval-Augmented Generation (RAG). Rješenje omogućuje
+                prijevode, sažetke i inteligentne interakcije s korisnicima,
+                pojednostavljujući komunikaciju i procese donošenja odluka.
               </div>
             </div>
           </div>
@@ -577,7 +575,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseTwo"
               >
-                Knowledge Base Construction with RAG
+                Izgradnja baze znanja s RAG-om
               </button>
             </h2>
             <div
@@ -586,10 +584,11 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Create dynamic knowledge bases using RAG technology for instant
-                access to policies, guidelines, and technical documentation.
-                Enable your team to perform quick, efficient searches, reducing
-                the time spent looking for crucial information.
+                Stvorite dinamične baze znanja koristeći RAG tehnologiju za
+                trenutačni pristup uputama, smjernicama i tehničkoj
+                dokumentaciji. Omogućite svom timu da provodi brze i učinkovite
+                pretrage, smanjujući vrijeme provedeno u potrazi za ključnim
+                informacijama.
               </div>
             </div>
           </div>
@@ -603,7 +602,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseThree"
               >
-                LLM-Powered Question-Answering Systems
+                LLM-pogonjeni sustavi s pitanjima i odgovorima
               </button>
             </h2>
             <div
@@ -612,11 +611,11 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Implement question-answering systems powered by the latest
-                Language Learning Models (LLMs) to help your employees find
-                information swiftly. From text or voice queries to comprehensive
-                answers in the user's language. Systems enhance internal
-                communication and knowledge sharing.
+                Implementirajte sustave za odgovaranje na pitanja koji koriste
+                najnovije modele učenja jezika (LLM) kako bi vaši zaposlenici
+                brzo pronašli informacije. Od upita teksta ili glasa do
+                sveobuhvatnih odgovora na jeziku korisnika. Sustavi poboljšavaju
+                internu komunikaciju i dijeljenje znanja.
               </div>
             </div>
           </div>
@@ -631,7 +630,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
               >
-                Automated Data Extraction and Integration
+                Automatizirano izdvajanje i integracija podataka
               </button>
             </h2>
             <div
@@ -640,11 +639,11 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Automate the extraction of information from forms, emails, or
-                scanned documents using machine learning and LLMs. Services
-                include populating spreadsheets or databases with the extracted
-                data and integrating it directly into (accounting, inventory, or
-                expense management) user systems.
+                Automatizirajte izdvajanje informacija iz obrazaca, e-poruka ili
+                skeniranih dokumenata koristeći strojno učenje i LLM-ove. Usluge
+                uključuju popunjavanje tabličnih proračuna ili baza podataka
+                izvađenim podacima i njihovu izravnu integraciju u korisničke
+                sustave.
               </div>
             </div>
           </div>
@@ -658,7 +657,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseTwo"
               >
-                ML-Based Document Categorization
+                Kategorizacija dokumenata temeljena na ML-u
               </button>
             </h2>
             <div
@@ -667,10 +666,11 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Train machine learning models to categorize invoices, receipts,
-                or documents by vendor, expense category, or project. Utilize
-                image recognition and OCR capabilities to extract key data
-                fields for seamless integration into user (financial) systems.
+                Trenirajte modele strojnog učenja kako biste kategorizirali
+                fakture, racune ili dokumente prema dobavljaču, kategoriji
+                troškova ili projektu. Koristite prepoznavanje slika i OCR
+                mogućnosti za izdvajanje ključnih polja s podacima za
+                besprijekornu integraciju u korisničke sustave.
               </div>
             </div>
           </div>
@@ -684,7 +684,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseThree"
               >
-                Advanced Text Analysis
+                Napredna analiza teksta
               </button>
             </h2>
             <div
@@ -693,12 +693,13 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Transform text data handling with ML-powered text
-                classification, entity extraction, and sentiment analysis.
-                Advanced ML models enable deep understanding of textual content.
-                This approach not only streamlines data management but also
-                enhances content analysis, enabling swift access to critical
-                insights and supporting strategic decision-making.
+                Transformirajte rukovanje tekstualnim podacima uz pomoć
+                klasifikacije teksta pogonjene ML-om, ekstrakcije entiteta i
+                analize sentimenta. Napredni ML modeli omogućuju duboko
+                razumijevanje tekstualnog sadržaja. Ovaj pristup ne samo da
+                optimizira upravljanje podacima, već također poboljšava analizu
+                sadržaja, omogućujući brz pristup kritičnim uvidima i
+                podržavajući strateško donošenje odluka.
               </div>
             </div>
           </div>
@@ -713,7 +714,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
               >
-                Enhanced Image Recognition
+                Napredno prepoznavanje slika
               </button>
             </h2>
             <div
@@ -722,11 +723,12 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Manage and interpret image data with ML-driven classification
-                and object detection. Tailored to identify and categorize visual
-                content accurately, the solution facilitates efficient
-                organization and analysis of images, empowering businesses to
-                make informed decisions based on visual insights.
+                Upravljajte i interpretirajte slikovne podatke s klasifikacijom
+                temeljenom na ML-u i otkrivanjem objekata. Prilagođeno za točnu
+                identifikaciju i kategorizaciju vizualnog sadržaja, rješenje
+                olakšava učinkovitu organizaciju i analizu slika, te ovlašćuje
+                poduzeća da donose informirane odluke na temelju vizualnih
+                uvida.
               </div>
             </div>
           </div>
@@ -740,7 +742,7 @@
                 aria-expanded="false"
                 aria-controls="flush-collapseTwo"
               >
-                Machine Learning for Regression and Prediction
+                Strojno učenje za regresiju i predviđanje
               </button>
             </h2>
             <div
@@ -749,10 +751,10 @@
               data-bs-parent="#accordionFlushExample"
             >
               <div class="accordion-body">
-                Advance business forecasting with ML-based regression and
-                prediction services. Algorithms are specifically designed to
-                analyze historical data and identify patterns, enabling accurate
-                forecasting and comprehensive trend analysis.
+                Unaprijedite poslovno predviđanje uslugama regresije i
+                predviđanja temeljenim na ML-u. Algoritmi su posebno dizajnirani
+                za analizu povijesnih podataka i identificiranje obrazaca,
+                omogućujući točno predviđanje i sveobuhvatnu analizu trendova.
               </div>
             </div>
           </div>
@@ -783,8 +785,8 @@
         <div class="offcanvas-body">
           <!-- Text content within the offcanvas body, indicating the feature or content it provides -->
           <p>
-            Chat about AI Novel stored in RAG. <br />
-            In development...
+            Chat o AI noveli spremljenoj u RAG-u. <br />
+            U razvoju...
           </p>
         </div>
       </div>
@@ -797,7 +799,7 @@
         >
           <!-- Copyright information, including contact details and legal information -->
           <p>
-            &copy; techXflow d.o.o. All rights reserved. info@techXflow.xyz +385
+            &copy; techXflow d.o.o. Sva prava pridržana. info@techXflow.xyz +385
             99 265 63 98 VAT:77667819758
           </p>
           <!-- List of social media and personal links, styled without default list styling and displayed as a flexbox row -->

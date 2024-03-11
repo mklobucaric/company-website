@@ -1,36 +1,37 @@
-.b-divider-top {
-  width: 100%;
-  height: 5rem;
-}
-
+/* Style adjustments for Bootstrap icons */
 .bi {
-  vertical-align: -.125em;
-  fill: currentColor;
+  vertical-align: -.125em; /* Aligns the icon slightly above the baseline */
+  fill: currentColor; /* Icon color will be the same as the text color */
 }
 
+/* Custom primary button styles with a unique violet theme */
 .btn-bd-primary {
+  /* Define custom property for violet background */
   --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bd-violet-bg);
-  --bs-btn-border-color: var(--bd-violet-bg);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: #6528e0;
-  --bs-btn-hover-border-color: #6528e0;
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #5a23c8;
-  --bs-btn-active-border-color: #5a23c8;
+  /* Override Bootstrap button variables to apply custom styles */
+  --bs-btn-font-weight: 600; /* Font weight for button text */
+  --bs-btn-color: var(--bs-white); /* Text color for button */
+  --bs-btn-bg: var(--bd-violet-bg); /* Background color for button */
+  --bs-btn-border-color: var(--bd-violet-bg); /* Border color for button */
+  --bs-btn-hover-color: var(--bs-white); /* Text color on hover */
+  --bs-btn-hover-bg: #6528e0; /* Background color on hover */
+  --bs-btn-hover-border-color: #6528e0; /* Border color on hover */
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb); /* Shadow color when button is focused */
+  --bs-btn-active-color: var(--bs-btn-hover-color); /* Text color when button is active */
+  --bs-btn-active-bg: #5a23c8; /* Background color when button is active */
+  --bs-btn-active-border-color: #5a23c8; /* Border color when button is active */
 }
 
+/* High z-index for mode toggle to ensure it stays on top of other elements */
 .bd-mode-toggle {
-  z-index: 1500;
+  z-index: 1500; /* High stacking order */
 }
 
+/* Ensure the Bootstrap icon within the mode toggle dropdown is visible when active */
 .bd-mode-toggle .dropdown-menu .active .bi {
-  display: block !important;
+  display: block !important; /* Override other display properties */
 }
 
 
@@ -38,58 +39,62 @@
  * Base structure
  */
 
+/* Adds a shadow to the text for all body content */
 body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5); /* Shadow for a 3D effect on text */
 }
 
+/* Limits the maximum width of the container for a centered look */
 .cover-container {
-  max-width: 60em;
+  max-width: 60em; /* Maximum width of the main container */
 }
 
 /*
  * Header
  */
 
- .raleway-name {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
+/* Custom font styling for elements with class 'raleway-name' */
+.raleway-name {
+  font-family: "Raleway", sans-serif; /* Specifies the font family */
+  font-optical-sizing: auto; /* Enables automatic optical sizing */
+  font-weight: 300; /* Font weight as light */
+  font-style: normal; /* Normal font style */
 }
 
+/* Style for navigation links within the masthead */
 .nav-masthead .nav-link {
-  color: rgba(255, 255, 255, .5);
-  border-bottom: .25rem solid transparent;
+  color: rgba(255, 255, 255, .5); /* Semi-transparent white color */
+  border-bottom: .25rem solid transparent; /* Transparent border for a consistent link size */
 }
 
+/* Hover and focus effects for navigation links */
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: rgba(255, 255, 255, .25); /* Changes border color on hover/focus */
 }
 
+/* Spacing for nav links to separate them from each other */
 .nav-masthead .nav-link + .nav-link {
-  margin-right: 1rem;
+  margin-right: 1rem; /* Right margin for spacing between links */
 }
 
+/* Styles for the active state of navigation links */
 .nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: #fff; /* White color for the active link */
+  border-bottom-color: #fff; /* White border for the active link */
 }
 
+/* Container for language selection flags */
 .language-container {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 20px;
-  cursor: pointer;
+  display: inline-flex; /* Uses flexbox for alignment */
+  align-items: center; /* Vertically centers items within the container */
+  margin-right: 20px; /* Right margin for spacing */
+  cursor: pointer; /* Changes cursor to indicate clickable area */
 }
 
-/* Apply a general rule for all flag images */
+/* General rule for all flag images to maintain a consistent height */
 .language-container img {
-  height: 20px; /* Adjust this value as needed */
-  width: auto;
+  height: 20px; /* Sets a fixed height for flag images */
+  width: auto; /* Maintains aspect ratio of the flags */
 }
 
-.language-container:last-child { /* Targets the second language container */
-  margin-top: 6px; /* Adjust the pixel value as needed */
-}

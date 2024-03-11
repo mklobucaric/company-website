@@ -1,33 +1,43 @@
-// Ensure that the DOM is fully loaded
+// Wait for the document to load before running the script
 document.addEventListener('DOMContentLoaded', () => {
+    // Attempt to find the element for mobile popover by its ID
     const popoverTriggerEl = document.querySelector('#mobilePopover');
+    // If the element exists, initialize a new Bootstrap popover for it
     if (popoverTriggerEl) {
         new bootstrap.Popover(popoverTriggerEl); 
     }
 
+    // Attempt to find the element for home popover by its ID
     const popoverTriggerHome = document.querySelector('#homePopover');
+    // If the element exists, initialize a new Bootstrap popover for it
     if (popoverTriggerHome) {
         new bootstrap.Popover(popoverTriggerHome); 
     }
 
+    // Find all nav-link elements within nav-masthead and set up click event listeners
     document.querySelectorAll('.nav-masthead .nav-link').forEach(link => {
         link.addEventListener('click', function() {
+            // When a nav-link is clicked, find all active nav-links and remove the 'active' class
+            // and 'aria-current' attribute to deactivate them
             document.querySelectorAll('.nav-masthead .nav-link.active').forEach(activeLink => {
                 activeLink.classList.remove('active');
                 activeLink.removeAttribute('aria-current');
             });
+            // Add the 'active' class and 'aria-current' attribute to the clicked nav-link
+            // to visually indicate it as the current page
             this.classList.add('active');
             this.setAttribute('aria-current', 'page');
         });
     });
 
-    // Event listener for when the offcanvas finishes closing
+    // Set up an event listener for when the offcanvas chat element finishes its closing transition
     document.getElementById('offcanvasChat').addEventListener('hidden.bs.offcanvas', function () {
+        // This function will contain logic to handle the chat closing,
+        // such as disconnecting from chat services or clearing chat history and show chat button
         closeChat();
     });
-    
-
 });
+
 
 // Function to open the offcanvas chat and hide the dropdown
 function openChat(model) {
