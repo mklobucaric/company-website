@@ -47,8 +47,6 @@ body {
   max-width: 60em;
 }
 
-
-
 /*
  * Header
  */
@@ -71,7 +69,7 @@ body {
 }
 
 .nav-masthead .nav-link + .nav-link {
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .nav-masthead .active {
@@ -82,7 +80,7 @@ body {
 .language-container {
   display: inline-flex;
   align-items: center;
-  margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
 }
 
@@ -90,4 +88,8 @@ body {
 .language-container img {
   height: 20px; /* Adjust this value as needed */
   width: auto;
+}
+
+.language-container:last-child { /* Targets the second language container */
+  margin-top: 6px; /* Adjust the pixel value as needed */
 }
