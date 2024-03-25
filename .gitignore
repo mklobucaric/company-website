@@ -17,3 +17,9 @@ Thumbs.db
 
 # IDE settings
 .vscode/
+
+# Firebase
+.firebaserc
+firebase.json
+/public
+/.firebase
