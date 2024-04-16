@@ -169,18 +169,16 @@
       </symbol>
     </svg>
 
-    <!-- Dropdown container, fixed to the bottom-right of the viewport -->
-    <div
-      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
-    >
-      <!-- Button that toggles the dropdown menu, styled with Bootstrap and custom classes -->
+    <!-- Button that opens chat, fixed to the bottom-right of the viewport -->
+    <div class="position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <!-- Button that opens chat, styled with Bootstrap and custom classes -->
       <button
-        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        class="btn btn-bd-primary py-2 d-flex align-items-center"
         id="bd-chat"
         type="button"
         aria-expanded="false"
-        data-bs-toggle="dropdown"
         aria-label="Toggle chat"
+        onclick="openChat()"
       >
         <!-- SVG icon for the button, using a symbols -->
         <svg class="bi my-1" width="2em" height="2em">
@@ -190,46 +188,146 @@
         <span class="ms-3" id="bd-chat-text">Chat/RAG</span>
       </button>
       <!-- The dropdown menu, aligned to the end (right) of the button with a shadow effect -->
-      <ul
-        class="dropdown-menu dropdown-menu-end shadow"
-        aria-labelledby="bd-chat-text"
-      >
-        <!-- Dropdown item for ChatGPT option -->
-        <li>
-          <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            aria-pressed="true"
-            onclick="openChat('ChatGPT')"
-          >
-            ChatGPT
-            <!-- SVG check icon, indicating selection (visible when ChatGPT is active) -->
-            <svg class="bi ms-auto" width="1em" height="1em" id="ChatCPGCheck">
-              <use href="#check2"></use>
-            </svg>
-          </button>
-        </li>
-        <!-- Dropdown item for Gemini option -->
-        <li>
-          <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            aria-pressed="false"
-            onclick="openChat('Gemini')"
-          >
-            Gemini
-            <!-- SVG check icon, hidden by default (visible when Gemini is active) -->
-            <svg
-              class="bi ms-auto d-none"
-              width="1em"
-              height="1em"
-              id="GeminiCheck"
+    </div>
+
+    <div
+      class="modal fade"
+      id="register"
+      aria-hidden="true"
+      aria-labelledby="loginLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="registerLabel">Register</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="register-first-name" class="col-form-label"
+                  >First name:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-first-name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="register-last-name" class="col-form-label"
+                  >Last name:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-last-name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="register-email" class="col-form-label"
+                  >Email:</label
+                >
+                <input type="text" class="form-control" id="register-email" />
+              </div>
+
+              <div class="mb-3">
+                <label for="register-password" class="col-form-label"
+                  >Password:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-password"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="register-confirm-password" class="col-form-label"
+                  >Confirm password:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-confirm-password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              data-bs-target="#login"
+              data-bs-toggle="modal"
             >
-              <use href="#check2"></use>
-            </svg>
-          </button>
-        </li>
-      </ul>
+              Login form
+            </button>
+            <button
+              class="btn btn-primary"
+              data-bs-target="#"
+              data-bs-toggle=""
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="login"
+      aria-hidden="true"
+      aria-labelledby="loginLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="lopginLabel">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="login-email" class="col-form-label">Email:</label>
+              <input type="text" class="form-control" id="login-email" />
+            </div>
+
+            <div class="mb-3">
+              <label for="login-password" class="col-form-label"
+                >Password:</label
+              >
+              <input type="text" class="form-control" id="login-password" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              data-bs-target="#register"
+              data-bs-toggle="modal"
+            >
+              Register form
+            </button>
+            <button
+              class="btn btn-primary"
+              data-bs-target="#"
+              data-bs-toggle=""
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Container div that centers content and allows for a flexible layout that fills the viewport -->
@@ -924,7 +1022,10 @@
           <!-- Text content within the offcanvas body, indicating the feature or content it provides -->
           <p>
             Chat about AI Novel. <br />
-            In development...
+            In development... <br />
+            <a href="https://github.com/mklobucaric/chatbot-RAG-demo"
+              >github.com/mklobucaric/chatbot-RAG-demo</a
+            >
           </p>
         </div>
       </div>

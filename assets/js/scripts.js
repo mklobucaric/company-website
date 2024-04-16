@@ -1,5 +1,8 @@
 // Wait for the document to load before running the script
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Set the firebaseToken variable in local storage to an empty string or null as the initial value
+    localStorage.setItem('firebaseToken', '');
     // Attempt to find the element for mobile popover by its ID
     const popoverTriggerEl = document.querySelector('#mobilePopover');
     // If the element exists, initialize a new Bootstrap popover for it
@@ -36,37 +39,62 @@ document.addEventListener('DOMContentLoaded', () => {
         // such as disconnecting from chat services or clearing chat history and show chat button
         closeChat();
     });
+
+    // Set up an event listener for when any modal is hidden
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('hidden.bs.modal', function () {
+            // Call the closeChat() function when any modal is hidden
+            closeChat();
+        });
+    });
+
+    // Set up an event listener for when any modal is shown
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('shown.bs.modal', function () {
+            // Hide the chat dropdown button when any modal is shown
+            document.getElementById('bd-chat').classList.add('d-none');
+        });
+    });
+
 });
 
 
 // Function to open the offcanvas chat and hide the dropdown
-function openChat(model) {
-    // Hide the chat dropdown button
+function openChat() {
+
     document.getElementById('bd-chat').classList.add('d-none');
 
-   // Hide all checks first to ensure only the correct one is shown   
-    document.getElementById('GeminiCheck').classList.add('d-none');
-    document.getElementById('ChatCPGCheck').classList.add('d-none');  
+    // Check if a Firebase token is present in local storage
+    const token = localStorage.getItem('firebaseToken');
 
-    if (model === 'ChatGPT'){
-        document.getElementById('ChatCPGCheck').classList.remove('d-none');
-    } else if (model === 'Gemini'){
-        document.getElementById('GeminiCheck').classList.remove('d-none');
+    // If a token is not present, display the modal
+    if (!token) {
+        var myModal = new bootstrap.Modal(document.getElementById('login'));
+        myModal.show();
+    } 
+    // If a token is present, show the offcanvas chat
+    else {
+        // Show the offcanvas component
+        var offcanvasChat = new bootstrap.Offcanvas(document.getElementById('offcanvasChat'));
+        offcanvasChat.show();
     }
 
-      // For demonstration, we'll log it to the console
-  console.log('Chat model selected:', model);
+    // Display the modal with the ID "register"
+    // var myModal = new bootstrap.Modal(document.getElementById('register'));
+    // myModal.show();
+        
   
     // Show the offcanvas component
-    var offcanvasChat = new bootstrap.Offcanvas(document.getElementById('offcanvasChat'));
-    offcanvasChat.show();
+    // var offcanvasChat = new bootstrap.Offcanvas(document.getElementById('offcanvasChat'));
+    // offcanvasChat.show();
   }
   
-  // Function to close the offcanvas chat and show the dropdown
+
+    // Function to close the offcanvas chat and show the dropdown
 function closeChat() {
     // Show the chat dropdown button
     document.getElementById('bd-chat').classList.remove('d-none');
   
   }
-  
 
+ 
