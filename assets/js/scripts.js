@@ -1,3 +1,4 @@
+
 // Wait for the document to load before running the script
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -56,6 +57,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const chatButton = document.getElementById('bd-chat');
+    if (chatButton) {
+        chatButton.addEventListener('click', openChat);
+        console.log("Chat button listener attached.");
+    } else {
+        console.log("Chat button not found.");
+    }
+
+    const registerButton = document.getElementById('register-submit');
+    if (registerButton) {
+        registerButton.addEventListener('click', register);
+    }
+
+
+    // const loginButton = document.getElementById('login-submit');
+    // if (loginButton) {
+    //     loginButton.addEventListener('click', login);
+    // }
+
 });
 
 
@@ -97,4 +117,73 @@ function closeChat() {
   
   }
 
- 
+ async function register() {
+
+
+    // Manually get values from the form inputs
+    const firstName = document.getElementById('register-first').value;
+    const lastName = document.getElementById('register-last-name').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+    const confirmPassword = document.getElementById('register-confirm-password').value;
+
+    
+    // Validate the form data
+    if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
+        console.log('Please fill out all fields.');
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        console.log('Passwords do not match.');
+        alert('Passwords do not match.');
+        return;
+    }
+
+    const user = {
+        email: email,
+        password: password,
+        first_name: firstName,
+        last_name: lastName,
+    };
+
+
+    try {
+        const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+        });
+
+        const result = await response.json();
+
+        if (response.status === 201) {
+            alert('Registration successful!\nPlease login to continue.');
+            const inputs = document.querySelectorAll('#register input');
+            inputs.forEach(input => {
+            input.value = '';
+            });
+
+            const myModal = document.getElementById('register');
+            const modalRegister = bootstrap.Modal.getInstance(myModal);
+            modalRegister.hide();
+
+            const myModal1 = document.getElementById('login');
+            const modalLogin = bootstrap.Modal.getInstance(myModal1);
+            modalLogin.show();
+
+        } else {
+            const result = await response.json(); 
+            console.error('Registration failed:', result);
+            alert('Registration failed! ' + result.detail);
+        }
+    } catch (error) {
+        console.error(error);
+        alert('Registration failed!');
+    }
+
+}
+

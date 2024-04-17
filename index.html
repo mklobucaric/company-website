@@ -170,15 +170,12 @@
     </svg>
 
     <!-- Button that opens chat, fixed to the bottom-right of the viewport -->
-    <div class="position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <div class="position-fixed bottom-0 end-0 mb-3 me-3">
       <!-- Button that opens chat, styled with Bootstrap and custom classes -->
       <button
         class="btn btn-bd-primary py-2 d-flex align-items-center"
         id="bd-chat"
         type="button"
-        aria-expanded="false"
-        aria-label="Toggle chat"
-        onclick="openChat()"
       >
         <!-- SVG icon for the button, using a symbols -->
         <svg class="bi my-1" width="2em" height="2em">
@@ -194,7 +191,7 @@
       class="modal fade"
       id="register"
       aria-hidden="true"
-      aria-labelledby="loginLabel"
+      aria-labelledby="registerLabel"
       tabindex="-1"
     >
       <div class="modal-dialog modal-dialog-centered">
@@ -209,16 +206,12 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="register-form">
               <div class="mb-3">
                 <label for="register-first-name" class="col-form-label"
                   >First name:</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="register-first-name"
-                />
+                <input type="text" class="form-control" id="register-first" />
               </div>
               <div class="mb-3">
                 <label for="register-last-name" class="col-form-label"
@@ -234,7 +227,7 @@
                 <label for="register-email" class="col-form-label"
                   >Email:</label
                 >
-                <input type="text" class="form-control" id="register-email" />
+                <input type="email" class="form-control" id="register-email" />
               </div>
 
               <div class="mb-3">
@@ -242,7 +235,7 @@
                   >Password:</label
                 >
                 <input
-                  type="text"
+                  type="password"
                   class="form-control"
                   id="register-password"
                 />
@@ -253,7 +246,7 @@
                   >Confirm password:</label
                 >
                 <input
-                  type="text"
+                  type="password"
                   class="form-control"
                   id="register-confirm-password"
                 />
@@ -268,11 +261,7 @@
             >
               Login form
             </button>
-            <button
-              class="btn btn-primary"
-              data-bs-target="#"
-              data-bs-toggle=""
-            >
+            <button class="btn btn-primary" id="register-submit" type="button">
               Register
             </button>
           </div>
@@ -300,14 +289,14 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="login-email" class="col-form-label">Email:</label>
-              <input type="text" class="form-control" id="login-email" />
+              <input type="email" class="form-control" id="login-email" />
             </div>
 
             <div class="mb-3">
               <label for="login-password" class="col-form-label"
                 >Password:</label
               >
-              <input type="text" class="form-control" id="login-password" />
+              <input type="password" class="form-control" id="login-password" />
             </div>
           </div>
           <div class="modal-footer">
@@ -318,11 +307,7 @@
             >
               Register form
             </button>
-            <button
-              class="btn btn-primary"
-              data-bs-target="#"
-              data-bs-toggle=""
-            >
+            <button class="btn btn-primary" id="login-submit" type="button">
               Login
             </button>
           </div>
@@ -1084,6 +1069,7 @@
     <!-- Script tag for including Bootstrap's JavaScript bundle, which contains Bootstrap's JavaScript components and dependencies -->
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Script tag for custom JavaScript scripts specific to the site or application -->
+
     <script src="assets/js/scripts.js"></script>
   </body>
 </html>
