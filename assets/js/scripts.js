@@ -60,10 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatButton = document.getElementById('bd-chat');
     if (chatButton) {
         chatButton.addEventListener('click', openChat);
-        console.log("Chat button listener attached.");
-    } else {
-        console.log("Chat button not found.");
-    }
+    } 
 
     const registerButton = document.getElementById('register-submit');
     if (registerButton) {
@@ -71,10 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // const loginButton = document.getElementById('login-submit');
-    // if (loginButton) {
-    //     loginButton.addEventListener('click', login);
-    // }
+
 
 });
 
