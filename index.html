@@ -184,7 +184,7 @@
         <!-- Text label for the button -->
         <span class="ms-3" id="bd-chat-text">Chat/RAG</span>
       </button>
-      <!-- The dropdown menu, aligned to the end (right) of the button with a shadow effect -->
+      <!-- Aligned to the end (right) of the button with a shadow effect -->
     </div>
 
     <div
@@ -984,7 +984,7 @@
 
       <!-- Offcanvas component, positioned at the end (right side) of the viewport -->
       <div
-        class="offcanvas offcanvas-end"
+        class="offcanvas offcanvas-end d-flex flex-column"
         data-bs-scroll="true"
         tabindex="-1"
         id="offcanvasChat"
@@ -993,7 +993,9 @@
         <!-- Header of the offcanvas component -->
         <div class="offcanvas-header">
           <!-- Title for the offcanvas content -->
-          <h5 class="offcanvas-title" id="offcanvasChatLabel">AI Chat</h5>
+          <h5 class="offcanvas-title" id="offcanvasChatLabel">
+            AI Retrieval Augmented Generation Chat
+          </h5>
           <!-- Button to close the offcanvas component -->
           <button
             type="button"
@@ -1003,15 +1005,37 @@
           ></button>
         </div>
         <!-- Body section of the offcanvas component -->
-        <div class="offcanvas-body">
-          <!-- Text content within the offcanvas body, indicating the feature or content it provides -->
-          <p>
-            Chat about AI Novel. <br />
-            In development... <br />
-            <a href="https://github.com/mklobucaric/chatbot-RAG-demo"
-              >github.com/mklobucaric/chatbot-RAG-demo</a
-            >
-          </p>
+        <div
+          class="offcanvas-body offcanvas-body d-flex flex-column flex-grow-1"
+        >
+          <!-- Container for chat messages -->
+          <div id="chat-messages" style="flex-grow: 1 overflow-auto"></div>
+
+          <!-- Form for user to input new message -->
+          <form id="chat-form" class="mt-auto">
+            <div class="mb-3">
+              <label for="chat-input" class="form-label">Your query:</label>
+              <textarea
+                class="form-control"
+                id="chat-input"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="d-flex justify-content-end">
+              <!-- Reset button -->
+              <button
+                type="reset"
+                class="btn btn-secondary me-2"
+                id="chatbot-reset"
+              >
+                Reset
+              </button>
+              <!-- Send button -->
+              <button type="button" class="btn btn-primary" id="chatbot-send">
+                Send
+              </button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -1072,5 +1096,6 @@
 
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/login.js" type="module"></script>
+    <script src="assets/js/chatbot.js"></script>
   </body>
 </html>

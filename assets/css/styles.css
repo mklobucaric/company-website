@@ -98,3 +98,13 @@ body {
   width: auto; /* Maintains aspect ratio of the flags */
 }
 
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures the offcanvas body takes full height of its container */
+}
+
+#chat-messages {
+  flex-grow: 1;
+  overflow-y: auto; /* Adds scroll to this container if content overflows */
+}

@@ -4,11 +4,10 @@
 var loginModal
 var registerModal
 var offcanvasChat
+// Set the firebaseToken variable in local storage to an empty string or null as the initial value
+localStorage.setItem('firebaseToken', 'sfsd');
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Set the firebaseToken variable in local storage to an empty string or null as the initial value
-    localStorage.setItem('firebaseToken', '');
     
     loginModal = new bootstrap.Modal(document.getElementById('login'));
     registerModal = new bootstrap.Modal(document.getElementById('register'));
