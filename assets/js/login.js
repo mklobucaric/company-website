@@ -49,9 +49,8 @@ async function login() {
         inputs.forEach(input => {
         input.value = '';
         });
-        const myModal1 = document.getElementById('login');
-        const modalLogin = bootstrap.Modal.getInstance(myModal1);
-        modalLogin.hide();
+         loginModal.hide();
+        offcanvasChat.show();
       } catch (error) {
         console.error(error);
         alert('Login failed!');

@@ -1,9 +1,19 @@
 
 // Wait for the document to load before running the script
+
+var loginModal
+var registerModal
+var offcanvasChat
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Set the firebaseToken variable in local storage to an empty string or null as the initial value
     localStorage.setItem('firebaseToken', '');
+    
+    loginModal = new bootstrap.Modal(document.getElementById('login'));
+    registerModal = new bootstrap.Modal(document.getElementById('register'));
+    offcanvasChat = new bootstrap.Offcanvas(document.getElementById('offcanvasChat'));
+
     // Attempt to find the element for mobile popover by its ID
     const popoverTriggerEl = document.querySelector('#mobilePopover');
     // If the element exists, initialize a new Bootstrap popover for it
@@ -52,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set up an event listener for when any modal is shown
     document.querySelectorAll('.modal').forEach(modal => {
         modal.addEventListener('shown.bs.modal', function () {
-            // Hide the chat dropdown button when any modal is shown
+            // Hide the chat button when any modal is shown
             document.getElementById('bd-chat').classList.add('d-none');
         });
     });
@@ -66,11 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerButton) {
         registerButton.addEventListener('click', register);
     }
-
-
-
-
 });
+
+
 
 
 // Function to open the offcanvas chat and hide the dropdown
@@ -83,24 +91,14 @@ function openChat() {
 
     // If a token is not present, display the modal
     if (!token) {
-        var myModal = new bootstrap.Modal(document.getElementById('login'));
-        myModal.show();
+        loginModal.show();
     } 
     // If a token is present, show the offcanvas chat
     else {
         // Show the offcanvas component
-        var offcanvasChat = new bootstrap.Offcanvas(document.getElementById('offcanvasChat'));
         offcanvasChat.show();
     }
 
-    // Display the modal with the ID "register"
-    // var myModal = new bootstrap.Modal(document.getElementById('register'));
-    // myModal.show();
-        
-  
-    // Show the offcanvas component
-    // var offcanvasChat = new bootstrap.Offcanvas(document.getElementById('offcanvasChat'));
-    // offcanvasChat.show();
   }
   
 
@@ -161,13 +159,8 @@ function closeChat() {
             input.value = '';
             });
 
-            const myModal = document.getElementById('register');
-            const modalRegister = bootstrap.Modal.getInstance(myModal);
-            modalRegister.hide();
-
-            const myModal1 = document.getElementById('login');
-            const modalLogin = bootstrap.Modal.getInstance(myModal1);
-            modalLogin.show();
+            registerModal.hide();
+            loginModal.show();
 
         } else {
             const result = await response.json(); 
