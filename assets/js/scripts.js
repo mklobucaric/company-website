@@ -5,7 +5,7 @@ var loginModal
 var registerModal
 var offcanvasChat
 // Set the firebaseToken variable in local storage to an empty string or null as the initial value
-localStorage.setItem('firebaseToken', 'sfsd');
+localStorage.setItem('firebaseToken', '');
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -122,13 +122,13 @@ function closeChat() {
     // Validate the form data
     if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
         console.log('Please fill out all fields.');
-        alert('Please fill out all fields.');
+        console.log('Please fill out all fields.');
         return;
     }
 
     if (password !== confirmPassword) {
         console.log('Passwords do not match.');
-        alert('Passwords do not match.');
+        console.log('Passwords do not match.');
         return;
     }
 
@@ -152,7 +152,7 @@ function closeChat() {
         const result = await response.json();
 
         if (response.status === 201) {
-            alert('Registration successful!\nPlease login to continue.');
+            console.log('Registration successful!\nPlease login to continue.');
             const inputs = document.querySelectorAll('#register input');
             inputs.forEach(input => {
             input.value = '';
@@ -164,11 +164,11 @@ function closeChat() {
         } else {
             const result = await response.json(); 
             console.error('Registration failed:', result);
-            alert('Registration failed! ' + result.detail);
+            console.log('Registration failed! ' + result.detail);
         }
     } catch (error) {
         console.error(error);
-        alert('Registration failed!');
+        console.log('Registration failed!');
     }
 
 }

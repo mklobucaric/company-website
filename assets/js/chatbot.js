@@ -13,7 +13,7 @@ const chatInput = document.getElementById('chat-input');
 // Get the send button
 const sendButton = document.getElementById('chatbot-send');
 
-let messageId = 0; // Initialize counter outside the function
+
 
 // Set up an event listener for when the offcanvas chat element finishes its closing transition
 document.getElementById('offcanvasChat').addEventListener('hidden.bs.offcanvas', function () {
@@ -27,6 +27,7 @@ if (sendButton) {
     //sendButton.addEventListener('click', retrieveAIResponse);
 }
 
+let messageId = 0; // Initialize counter outside the function
 // Create an array to store the chat messages
 var messages = [];
 let socket = null;
@@ -61,7 +62,7 @@ async function retrieveAIResponse () {
 
         if (response.status === 201) {
             const result = await response.json();
-            alert('Response retrieval successful!');
+            console.log('Response retrieval successful!');
             messages.push({ "role": "assistant", "content": result.content });
 
             // Display the messages in the chat messages container
@@ -71,12 +72,12 @@ async function retrieveAIResponse () {
         } else {
             const result = await response.json(); 
             console.error('Response retrieval failed:', result);
-            alert('Response retrieval failed! ' + result.detail);
+            console.log('Response retrieval failed! ' + result.detail);
         }
 
     } catch (error) {
         console.error(error);
-        alert('Response retrieval failed!');
+        console.log('Response retrieval failed!');
 }
 
 };
@@ -114,13 +115,18 @@ function displayMessage (message, msgId) {
 
 
 function setupWebSocket() {
-    socket = new WebSocket('ws://127.0.0.1:8000/api/chat/ws/aschat');
+
+    // Get the Firebase token from local storage
+    const token = localStorage.getItem('firebaseToken');
+
+    socket = new WebSocket(`ws://127.0.0.1:8000/api/chat/ws/aschat?token=${encodeURIComponent(token)}`);
 
     socket.onopen = function(event) {
         console.log("WebSocket is open now.");
         if (pendingMessages.length > 0) {
             pendingMessages.forEach(msg => socket.send(JSON.stringify({ messages: msg })));
             pendingMessages = [];  // Clear the queue after sending
+            
         }
     };
 
@@ -134,13 +140,15 @@ function setupWebSocket() {
         messages.length = 0;
         chatMessages.innerHTML = '';
         console.log('WebSocket connection closed:', event);
+        messageId = 0;
     };
 
 
     socket.onerror = function(event) {
         console.error('WebSocket error:', event);
-        alert('WebSocket connection error!');
+        console.log('WebSocket connection error!');
     };
+
 }
 
 
@@ -184,11 +192,7 @@ async function retrieveAIStream() {
             streamMessage += token;
             displayMessageStream(token, messageId);
         }
-
-
     };
-
-
 }
 
 // Display message in the offcanvas body
@@ -208,7 +212,8 @@ function closeWebSocket() {
         socket.close(1000, "Closing connection normally."); // 1000 is a normal closure code
         messages.length = 0;
         chatMessages.innerHTML = '';
-        streamMessage = ''; // Reset for next connection
+        streamMessage = ''; 
+        messageId = 0;
 
     }
 }

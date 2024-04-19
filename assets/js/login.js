@@ -53,7 +53,7 @@ async function login() {
         offcanvasChat.show();
       } catch (error) {
         console.error(error);
-        alert('Login failed!');
+        console.log('Login failed!');
       }
 
 }
