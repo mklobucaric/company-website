@@ -15,6 +15,13 @@ const sendButton = document.getElementById('chatbot-send');
 
 let messageId = 0; // Initialize counter outside the function
 
+// Set up an event listener for when the offcanvas chat element finishes its closing transition
+document.getElementById('offcanvasChat').addEventListener('hidden.bs.offcanvas', function () {
+    // This function will contain logic to handle the chat closing,
+    // such as disconnecting from chat services or clearing chat history and show chat button
+    closeWebSocket();
+});
+
 if (sendButton) {
     sendButton.addEventListener('click', retrieveAIStream);
     //sendButton.addEventListener('click', retrieveAIResponse);
@@ -22,6 +29,9 @@ if (sendButton) {
 
 // Create an array to store the chat messages
 var messages = [];
+let socket = null;
+let pendingMessages = [];
+let streamMessage = ""
 
 // Add an event listener for the chat form submit event
 async function retrieveAIResponse () {
@@ -56,7 +66,7 @@ async function retrieveAIResponse () {
 
             // Display the messages in the chat messages container
             messageId++
-            displayMessage(messages[messages.length - 1],messageId);
+            displayMessage(messages[messages.length - 1], messageId);
 
         } else {
             const result = await response.json(); 
@@ -103,23 +113,64 @@ function displayMessage (message, msgId) {
 };
 
 
+function setupWebSocket() {
+    socket = new WebSocket('ws://127.0.0.1:8000/api/chat/ws/aschat');
+
+    socket.onopen = function(event) {
+        console.log("WebSocket is open now.");
+        if (pendingMessages.length > 0) {
+            pendingMessages.forEach(msg => socket.send(JSON.stringify({ messages: msg })));
+            pendingMessages = [];  // Clear the queue after sending
+        }
+    };
+
+    socket.onmessage = function(event) {
+        //console.log("Received:", event.data);
+        // Handle incoming messages
+    };
+    socket.onclose = function(event) {
+        //messages.push({ "role": "assistant", "content": streamMessage });
+        streamMessage = ''; // Reset for next connection
+        messages.length = 0;
+        chatMessages.innerHTML = '';
+        console.log('WebSocket connection closed:', event);
+    };
+
+
+    socket.onerror = function(event) {
+        console.error('WebSocket error:', event);
+        alert('WebSocket connection error!');
+    };
+}
+
+
 async function retrieveAIStream() {
     // Get the value of the chat input
     const message = chatInput.value;
     messages.push({ "role": "user", "content": message });
-    displayMessage(messages[messages.length - 1]);
+    messageId++
+    displayMessage(messages[messages.length - 1],messageId);
     chatInput.value = '';  // Clear the chat input
 
-    const socket = new WebSocket('ws://127.0.0.1:8000/api/chat/ws/aschat');
+    // const socket = new WebSocket('ws://127.0.0.1:8000/api/chat/ws/aschat');
 
-    socket.onopen = function(event) {
-        // Send the message once the connection is opened
-        socket.send(JSON.stringify({messages:messages}));
-    };
+    // socket.onopen = function(event) {
+    //     // Send the message once the connection is opened
+    //     socket.send(JSON.stringify({messages:messages}));
+    if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.send(JSON.stringify({ messages: messages }));
+    } else {
+        console.log("WebSocket is not open. Queueing message and trying to reconnect...");
+        pendingMessages.push(messages);  // Queue messages to send after reconnecting
+        if (!socket || socket.readyState === WebSocket.CLOSED) {
+            setupWebSocket();
+        }
+    }
+
+    // };
     messageId++
     displayMessage({ "role": "assistant", "content": "" }, messageId);
 
-    var streamMessage = ""
 
     socket.onmessage = function(event) {
         // Display each incoming token
@@ -137,16 +188,6 @@ async function retrieveAIStream() {
 
     };
 
-    socket.onclose = function(event) {
-        messages.push({ "role": "assistant", "content": streamMessage });
-        streamMessage = ''; // Reset for next connection
-        console.log('WebSocket connection closed:', event);
-    };
-
-    socket.onerror = function(event) {
-        console.error('WebSocket error:', event);
-        alert('WebSocket connection error!');
-    };
 
 }
 
@@ -162,6 +203,13 @@ function displayMessageStream(token, msgId) {
     }
 }
 
+function closeWebSocket() {
+    if (socket && socket.readyState === WebSocket.OPEN) {
+        socket.close(1000, "Closing connection normally."); // 1000 is a normal closure code
+        messages.length = 0;
+        chatMessages.innerHTML = '';
+        streamMessage = ''; // Reset for next connection
 
-
+    }
+}
 

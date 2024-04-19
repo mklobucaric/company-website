@@ -101,7 +101,7 @@ function openChat() {
   }
   
 
-    // Function to close the offcanvas chat and show the dropdown
+    // Function to close the offcanvas chat and show the button
 function closeChat() {
     // Show the chat dropdown button
     document.getElementById('bd-chat').classList.remove('d-none');
