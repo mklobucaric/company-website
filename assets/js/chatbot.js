@@ -147,13 +147,20 @@ function setupWebSocket() {
     socket.onerror = function(event) {
         console.error('WebSocket error:', event);
         console.log('WebSocket connection error!');
-    };
+        loginModal.show(); // Add this line to show the login modal when there is a WebSocket error
+      };
+      
 
 }
 
 
 async function retrieveAIStream() {
     // Get the value of the chat input
+    if (messageId === 0) {
+        chatMessages.innerHTML = '';
+    }
+
+    // Add the message to the messages array
     const message = chatInput.value;
     messages.push({ "role": "user", "content": message });
     messageId++
