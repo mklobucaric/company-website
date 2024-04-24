@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginModal = new bootstrap.Modal(document.getElementById('login'));
     registerModal = new bootstrap.Modal(document.getElementById('register'));
     offcanvasChat = new bootstrap.Offcanvas(document.getElementById('offcanvasChat'));
+    quotaModal = new bootstrap.Modal(document.getElementById('quotaModal'));
 
     // Attempt to find the element for mobile popover by its ID
     const popoverTriggerEl = document.querySelector('#mobilePopover');
@@ -127,7 +128,6 @@ function closeChat() {
     }
 
     if (password !== confirmPassword) {
-        console.log('Passwords do not match.');
         console.log('Passwords do not match.');
         return;
     }

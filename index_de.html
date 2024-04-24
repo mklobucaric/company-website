@@ -169,18 +169,38 @@
       </symbol>
     </svg>
 
-    <!-- Dropdown container, fixed to the bottom-right of the viewport -->
+    <!-- Modal Quota -->
     <div
-      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      class="modal fade"
+      id="quotaModal"
+      tabindex="-1"
+      aria-labelledby="quotaModalLabel"
+      aria-hidden="true"
     >
-      <!-- Button that toggles the dropdown menu, styled with Bootstrap and custom classes -->
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="quotaModalLabel">
+              Daily or user quota exceeded.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button that opens chat, fixed to the bottom-right of the viewport -->
+    <div class="position-fixed bottom-0 end-0 mb-3 me-3">
+      <!-- Button that opens chat, styled with Bootstrap and custom classes -->
       <button
-        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        class="btn btn-bd-primary py-2 d-flex align-items-center"
         id="bd-chat"
         type="button"
-        aria-expanded="false"
-        data-bs-toggle="dropdown"
-        aria-label="Toggle chat"
       >
         <!-- SVG icon for the button, using a symbols -->
         <svg class="bi my-1" width="2em" height="2em">
@@ -189,47 +209,135 @@
         <!-- Text label for the button -->
         <span class="ms-3" id="bd-chat-text">Chat/RAG</span>
       </button>
-      <!-- The dropdown menu, aligned to the end (right) of the button with a shadow effect -->
-      <ul
-        class="dropdown-menu dropdown-menu-end shadow"
-        aria-labelledby="bd-chat-text"
-      >
-        <!-- Dropdown item for ChatGPT option -->
-        <li>
-          <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            aria-pressed="true"
-            onclick="openChat('ChatGPT')"
-          >
-            ChatGPT
-            <!-- SVG check icon, indicating selection (visible when ChatGPT is active) -->
-            <svg class="bi ms-auto" width="1em" height="1em" id="ChatCPGCheck">
-              <use href="#check2"></use>
-            </svg>
-          </button>
-        </li>
-        <!-- Dropdown item for Gemini option -->
-        <li>
-          <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            aria-pressed="false"
-            onclick="openChat('Gemini')"
-          >
-            Gemini
-            <!-- SVG check icon, hidden by default (visible when Gemini is active) -->
-            <svg
-              class="bi ms-auto d-none"
-              width="1em"
-              height="1em"
-              id="GeminiCheck"
+      <!-- Aligned to the end (right) of the button with a shadow effect -->
+    </div>
+
+    <div
+      class="modal fade"
+      id="register"
+      aria-hidden="true"
+      aria-labelledby="registerLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="registerLabel">Register</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="register-form">
+              <div class="mb-3">
+                <label for="register-first-name" class="col-form-label"
+                  >First name:</label
+                >
+                <input type="text" class="form-control" id="register-first" />
+              </div>
+              <div class="mb-3">
+                <label for="register-last-name" class="col-form-label"
+                  >Last name:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-last-name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="register-email" class="col-form-label"
+                  >Email:</label
+                >
+                <input type="email" class="form-control" id="register-email" />
+              </div>
+
+              <div class="mb-3">
+                <label for="register-password" class="col-form-label"
+                  >Password:</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="register-password"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="register-confirm-password" class="col-form-label"
+                  >Confirm password:</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="register-confirm-password"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              data-bs-target="#login"
+              data-bs-toggle="modal"
             >
-              <use href="#check2"></use>
-            </svg>
-          </button>
-        </li>
-      </ul>
+              Login form
+            </button>
+            <button class="btn btn-primary" id="register-submit" type="button">
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="login"
+      aria-hidden="true"
+      aria-labelledby="loginLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="lopginLabel">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="login-email" class="col-form-label">Email:</label>
+              <input type="email" class="form-control" id="login-email" />
+            </div>
+
+            <div class="mb-3">
+              <label for="login-password" class="col-form-label"
+                >Password:</label
+              >
+              <input type="password" class="form-control" id="login-password" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              data-bs-target="#register"
+              data-bs-toggle="modal"
+            >
+              Register form
+            </button>
+            <button class="btn btn-primary" id="login-submit" type="button">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Container div that centers content and allows for a flexible layout that fills the viewport -->
@@ -795,128 +903,112 @@
               data-bs-parent="#accordionAINovel"
             >
               <div class="accordion-body">
-                <h5>
-                  Jenseits der Grenzen: Eine Reise durch den Schleier der
-                  Zukunft
-                </h5>
-                <h6>Hauptkapitel (Anwendungsbereiche der Technologie)</h6>
+                <h5>Beyond Boundaries: A Journey Through Future's Veil</h5>
+                <h6>Main Chapters (Areas of Technology Application)</h6>
                 <br />
-                <h6>Der Körper neu imaginiert &amp; verbessert</h6>
+                <h6>The Body Reimagined &amp; Enhanced</h6>
                 <br />
                 <p>
-                  Unterkapitel: Designer Gene: Das Bearbeiten des menschlichen
-                  Genoms verspricht Heilungen und eliminiert erbliche
-                  Krankheiten, öffnet aber auch die Tür zu hergestellten
-                  Ungleichheiten.
+                  Subchapter: Designer Genes: Editing the human genome promises
+                  cures, and eliminates hereditary diseases, but also opens the
+                  door to manufactured inequalities.
                 </p>
                 <p>
-                  Unterkapitel: Cyborg-Symbiose: Implantate und neuronale
-                  Verbindungen steigern die Kognition und körperliche
-                  Fähigkeiten, verwischen die Grenzen zwischen Mensch und
-                  Maschine.
+                  Subchapter: Cyborg Symbiosis: Implants and neural links
+                  enhance cognition and physical abilities, blurring the lines
+                  between human and machine.
                 </p>
                 <p>
-                  Unterkapitel: Permanente Lebensspannen: Fortgeschrittene
-                  Medizintechnik und Zellregeneration verlängern Lebensspannen
-                  drastisch. Regenerationstechnik und Nanomedizin bieten extreme
-                  Lebensdauern.
+                  Subchapter: Perpetual Lifespans: Advanced medical tech and
+                  cellular regeneration drastically extend lifespans.
+                  Regeneration tech and nanomedicine offer extreme lifespans.
                 </p>
                 <p>
-                  Unterkapitel: Die Verschmelzung von Geist &amp; Maschine:
-                  Implantate, neuronale Verbindungen und potenzielle Uploads –
-                  wo endet der menschliche Geist und die Maschine beginnt?
+                  Subchapter: The Merge of Mind &amp; Machine: Implants, neural
+                  links, and potential uploads – where does the human mind end
+                  and the machine begin?
                 </p>
                 <br />
                 <h6>
-                  Wenn Maschinen die Arbeit verrichten: Arbeit, Governance &amp;
-                  eine sich verändernde Gesellschaft
+                  When Machines Do the Work: Labor, Governance &amp; a Shifting
+                  Society
                 </h6>
-
                 <br />
                 <p>
-                  Unterkapitel: Das Ende der Arbeit, wie wir sie kennen: KI und
-                  Robotik automatisieren weite Sektoren der Wirtschaft, führen
-                  Städte und Logistiksysteme, versprechen Optimierung, was zu
-                  weit verbreiteter Arbeitslosigkeit und sozialen Umbrüchen
-                  führt.
+                  Subchapter: The End of Jobs as We Know Them: AI and robotics
+                  automate vast sectors of the economy, run cities and logistics
+                  systems, promising optimization, leading to widespread
+                  unemployment and social upheaval.
                 </p>
                 <p>
-                  Unterkapitel: Überwachungssingularität: Allgegenwärtige
-                  Überwachung wirft Fragen nach Privatsphäre, individueller
-                  Freiheit und demokratischen Werten auf, während KIs Bürger
-                  profilieren, um kriminelles Verhalten vorherzusagen und zu
-                  verhindern.
+                  Subchapter: Surveillance Singularity: Omnipresent surveillance
+                  raises questions of privacy, individual freedom and democratic
+                  values, while AIs profile citizens to predict and prevent
+                  criminal behavior.
                 </p>
                 <p>
-                  Unterkapitel: Schwarmintelligenz-Kollaboration: Menschen
-                  verschmelzen mit KI-Systemen zu kollektiver Intelligenz, was
-                  Bereiche wie Wissenschaft und Problemlösung revolutioniert.
+                  Subchapter: Hivemind Collaboration: Humans merge with AI
+                  systems to form collective intelligence, revolutionizing
+                  fields like science and problem-solving.
                 </p>
                 <p>
-                  Unterkapitel: Virtuelle Ökonomien: Ganz neue Berufe entstehen
-                  in vollständig immersiven VR-Welten, bieten sowohl Chancen als
-                  auch das Risiko des Eskapismus.
+                  Subchapter: Virtual Economies: Entirely new occupations emerge
+                  in fully immersive VR worlds, offering both opportunity and
+                  the risk of escapism.
                 </p>
                 <p>
-                  Unterkapitel: Bedingungsloses Grundeinkommen: Garantierte
-                  Existenzsicherung oder erdrückende Abhängigkeit? Können neue
-                  Wirtschaftsmodelle gesellschaftliche Stabilität in einer
-                  Zukunft mit begrenzter Arbeit gewährleisten?
+                  Subchapter: Universal Basic Income: Guaranteed Sustenance or
+                  Crushing Dependency? Can new economic models ensure societal
+                  stability in a future of limited labor?
                 </p>
                 <br />
-                <h6>Planetare Ingenieurskunst: Unsere Welt neu gestalten</h6>
+                <h6>Planetary Engineering: Reshaping Our World</h6>
                 <br />
-
                 <p>
-                  Unterkapitel: Nano-Schwärme: Selbstreplizierende Nanobots
-                  reinigen die Ozeane von Verschmutzung und formen beschädigte
-                  Ökosysteme um, aber was, wenn sie sich gegen die Menschheit
-                  wenden?
+                  Subchapter: Nano-Swarms: Self-replicating nanobots cleanse the
+                  oceans of pollution and reshape damaged ecosystems, but what
+                  if they turn against humanity?
                 </p>
                 <p>
-                  Unterkapitel: Geoengineering der Erde: Verzweifelte Eingriffe
-                  zur Bekämpfung des Klimawandels bergen Umweltrisiken und
-                  geopolitische Spannungen.
+                  Subchapter: Geoengineering Earth: Desperate interventions to
+                  combat climate change carry environmental risks and
+                  geopolitical tensions.
                 </p>
                 <p>
-                  Unterkapitel: Smarte Megastädte: Von KI verwaltete, vernetzte
-                  Stadtausdehnungen bieten Effizienz, Hyperüberwachung und das
-                  Potenzial für soziale Kontrolle.
+                  Subchapter: Smart Megacities: AI-managed, interconnected urban
+                  sprawls offer efficiency, hyper-surveillance, and the
+                  potential for social control.
                 </p>
                 <br />
-                <h6>Geist über Materie: KI, Bewusstsein &amp; Ethik</h6>
+                <h6>Mind Over Matter: AI, Consciousness &amp; Ethics</h6>
                 <br />
-
                 <p>
-                  Unterkapitel: Digitales Jenseits: Ist es möglich, das
-                  Bewusstsein hochzuladen? Welche Implikationen ergeben sich für
-                  die Sterblichkeit und die Seele?
+                  Subchapter: Digital Afterlife: Is it possible to upload
+                  consciousness? What are the implications for mortality and the
+                  soul?
                 </p>
                 <p>
-                  Unterkapitel: Emotionale KI: Beziehungen mit
-                  empfindungsfähigen KI-Gefährten werfen Fragen über die Natur
-                  der Liebe und Manipulation auf.
+                  Subchapter: Emotional AI: Relationships with sentient AI
+                  companions raise questions about the nature of love and
+                  manipulation.
                 </p>
                 <p>
-                  Unterkapitel: Digitales Bewusstsein: Sollte eine hinreichend
-                  komplexe und empfindungsfähige KI die gleichen Rechte und
-                  Schutzmaßnahmen wie biologische Menschen erhalten?
+                  Subchapter: Digital Consciousness: Should a sufficiently
+                  complex and sentient AI gain the same rights and protections
+                  as biological humans?
                 </p>
                 <br />
-                <h6>Zu den Sternen &amp; darüber hinaus</h6>
+                <h6>To the Stars &amp; Beyond</h6>
                 <br />
-
                 <p>
-                  Unterkapitel: Terraforming des Mars: Die Menschheit beginnt
-                  damit, den Mars zu kolonisieren und dabei Herausforderungen
-                  wie niedrige Schwerkraft, Strahlung und psychologische
-                  Isolation der Siedler zu bewältigen.
+                  Subchapter: Terraforming Mars: Humanity begins to colonize
+                  Mars, dealing with challenges like low gravity, radiation, and
+                  psychological isolation on settlers.
                 </p>
                 <p>
-                  Unterkapitel: Die Orbitale Stadt: Weitläufige orbitale
-                  Lebensräume bieten eine Flucht vor einer überfüllten Erde und
-                  schaffen eine neue Klassenkluft zwischen denen oben und denen
-                  unten.
+                  Subchapter: The Orbital City: Vast orbital habitats provide an
+                  escape from a crowded Earth, creating a new class divide
+                  between those above and those below.
                 </p>
               </div>
             </div>
@@ -926,7 +1018,7 @@
 
       <!-- Offcanvas component, positioned at the end (right side) of the viewport -->
       <div
-        class="offcanvas offcanvas-end"
+        class="offcanvas offcanvas-end d-flex flex-column"
         data-bs-scroll="true"
         tabindex="-1"
         id="offcanvasChat"
@@ -935,7 +1027,9 @@
         <!-- Header of the offcanvas component -->
         <div class="offcanvas-header">
           <!-- Title for the offcanvas content -->
-          <h5 class="offcanvas-title" id="offcanvasChatLabel">AI Chat</h5>
+          <h5 class="offcanvas-title" id="offcanvasChatLabel">
+            AI Retrieval Augmented Generation Chat
+          </h5>
           <!-- Button to close the offcanvas component -->
           <button
             type="button"
@@ -945,15 +1039,48 @@
           ></button>
         </div>
         <!-- Body section of the offcanvas component -->
-        <div class="offcanvas-body">
-          <!-- Text content within the offcanvas body, indicating the feature or content it provides -->
-          <p>
-            Chat über KI-Novellen. <br />
-            In Entwicklung...<br />
-            <a href="https://github.com/mklobucaric/chatbot-RAG-demo"
-              >github.com/mklobucaric/chatbot-RAG-demo</a
-            >
-          </p>
+        <div
+          class="offcanvas-body offcanvas-body d-flex flex-column flex-grow-1"
+        >
+          <!-- Container for chat messages -->
+          <div id="chat-messages" style="flex-grow: 1 overflow-auto">
+            <div>
+              Welcome to the RAG AI Chatbot! Here, you can delve into our
+              AI-generated sci-fi novel. Each subchapter presents a unique
+              narrative twist and development. To begin, simply ask the chatbot
+              about any elements or details within the subchapter of interest.
+              You can find the table of contents under the section 'AI Generated
+              Sci-Fi Novel' on this webpage. If you're curious about a different
+              subchapter, click the 'Reset' button to switch the focus of the
+              conversation. Enjoy your journey through this futuristic saga!
+            </div>
+          </div>
+
+          <!-- Form for user to input new message -->
+          <form id="chat-form" class="mt-auto">
+            <div class="mb-3">
+              <label for="chat-input" class="form-label">Your query:</label>
+              <textarea
+                class="form-control"
+                id="chat-input"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="d-flex justify-content-end">
+              <!-- Reset button -->
+              <button
+                type="reset"
+                class="btn btn-secondary me-2"
+                id="chatbot-reset"
+              >
+                Reset
+              </button>
+              <!-- Send button -->
+              <button type="button" class="btn btn-primary" id="chatbot-send">
+                Send
+              </button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -1012,5 +1139,7 @@
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Script tag for custom JavaScript scripts specific to the site or application -->
     <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/login.js" type="module"></script>
+    <script src="assets/js/chatbot.js"></script>
   </body>
 </html>

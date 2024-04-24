@@ -15,6 +15,7 @@ const sendButton = document.getElementById('chatbot-send');
 
 
 
+
 // Set up an event listener for when the offcanvas chat element finishes its closing transition
 document.getElementById('offcanvasChat').addEventListener('hidden.bs.offcanvas', function () {
     // This function will contain logic to handle the chat closing,
@@ -33,6 +34,8 @@ var messages = [];
 let socket = null;
 let pendingMessages = [];
 let streamMessage = ""
+
+let quota_exceeded = false
 
 // Add an event listener for the chat form submit event
 async function retrieveAIResponse () {
@@ -141,6 +144,14 @@ function setupWebSocket() {
         chatMessages.innerHTML = '';
         console.log('WebSocket connection closed:', event);
         messageId = 0;
+
+        if (quota_exceeded) {
+            offcanvasChat.hide()
+            localStorage.setItem('firebaseToken', '');
+            quotaModal.show();
+  
+    };
+
     };
 
 
@@ -195,6 +206,9 @@ async function retrieveAIStream() {
         if (token === '{"type": "end_of_stream"}') {
             messages.push({ "role": "assistant", "content": streamMessage });
             streamMessage = ''; // Reset for next message stream
+            
+        } else if (token === '{"type": "quota_exceeded"}') {
+            quota_exceeded = true;
         } else {
             streamMessage += token;
             displayMessageStream(token, messageId);

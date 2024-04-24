@@ -169,6 +169,31 @@
       </symbol>
     </svg>
 
+    <!-- Modal Quota -->
+    <div
+      class="modal fade"
+      id="quotaModal"
+      tabindex="-1"
+      aria-labelledby="quotaModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="quotaModalLabel">
+              Daily or user quota exceeded.
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Button that opens chat, fixed to the bottom-right of the viewport -->
     <div class="position-fixed bottom-0 end-0 mb-3 me-3">
       <!-- Button that opens chat, styled with Bootstrap and custom classes -->
@@ -298,6 +323,7 @@
               >
               <input type="password" class="form-control" id="login-password" />
             </div>
+            <div class="form-check"></div>
           </div>
           <div class="modal-footer">
             <button
