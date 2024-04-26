@@ -111,8 +111,6 @@ function closeChat() {
 
  async function register() {
 
-
-    // Manually get values from the form inputs
     const firstName = document.getElementById('register-first').value;
     const lastName = document.getElementById('register-last-name').value;
     const email = document.getElementById('register-email').value;
@@ -120,15 +118,43 @@ function closeChat() {
     const confirmPassword = document.getElementById('register-confirm-password').value;
 
     
-    // Validate the form data
-    if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
-        console.log('Please fill out all fields.');
-        console.log('Please fill out all fields.');
-        return;
+    // Check if any field is empty
+    const inputs = document.querySelectorAll('#register-form .form-control');
+    let isValid = true;
+    inputs.forEach(input => {
+        if (!input.value) {
+            const feedback = input.nextElementSibling;
+            feedback.style.display = 'block';
+            feedback.textContent = 'This field is required.';
+            isValid = false;
+        } else {
+            input.nextElementSibling.style.display = 'none';
+        }
+    });
+
+    // Validate email format
+    if (!validateEmail(email)) {
+        document.getElementById('register-email').nextElementSibling.textContent = 'Invalid email format';
+        document.getElementById('register-email').nextElementSibling.style.display = 'block';
+        isValid = false;
+    }
+    
+    if (password.length < 8) {
+        document.getElementById('register-password').nextElementSibling.textContent = 'Password must be at least 8 characters.';
+        document.getElementById('register-password').nextElementSibling.style.display = 'block';
+        isValid = false;
     }
 
+    // Validate passwords match
     if (password !== confirmPassword) {
-        console.log('Passwords do not match.');
+        document.getElementById('register-confirm-password').nextElementSibling.textContent = 'Passwords do not match';
+        document.getElementById('register-confirm-password').nextElementSibling.style.display = 'block';
+        isValid = false;
+    }
+
+
+    if (!isValid) {
+        console.error('Validation failed.');
         return;
     }
 
@@ -141,7 +167,8 @@ function closeChat() {
 
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
+        const response = await fetch('https://api.techxflow.xyz/api/auth/register', {
+        //const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -162,7 +189,6 @@ function closeChat() {
             loginModal.show();
 
         } else {
-            const result = await response.json(); 
             console.error('Registration failed:', result);
             console.log('Registration failed! ' + result.detail);
         }
@@ -173,3 +199,8 @@ function closeChat() {
 
 }
 
+// Email validation function
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}

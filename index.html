@@ -236,8 +236,17 @@
                 <label for="register-first-name" class="col-form-label"
                   >First name:</label
                 >
-                <input type="text" class="form-control" id="register-first" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="register-first"
+                  required
+                />
+                <div class="invalid-feedback" style="display: none">
+                  First name is required.
+                </div>
               </div>
+
               <div class="mb-3">
                 <label for="register-last-name" class="col-form-label"
                   >Last name:</label
@@ -246,13 +255,25 @@
                   type="text"
                   class="form-control"
                   id="register-last-name"
+                  required
                 />
+                <div class="invalid-feedback" style="display: none">
+                  Last name is required.
+                </div>
               </div>
               <div class="mb-3">
                 <label for="register-email" class="col-form-label"
                   >Email:</label
                 >
-                <input type="email" class="form-control" id="register-email" />
+                <input
+                  type="email"
+                  class="form-control"
+                  id="register-email"
+                  required
+                />
+                <div class="invalid-feedback" style="display: none">
+                  Valid email is required.
+                </div>
               </div>
 
               <div class="mb-3">
@@ -263,7 +284,12 @@
                   type="password"
                   class="form-control"
                   id="register-password"
+                  required
+                  minlength="8"
                 />
+                <div class="invalid-feedback" style="display: none">
+                  Password must be at least 8 characters.
+                </div>
               </div>
 
               <div class="mb-3">
@@ -274,7 +300,11 @@
                   type="password"
                   class="form-control"
                   id="register-confirm-password"
+                  required
                 />
+                <div class="invalid-feedback" style="display: none">
+                  Passwords must match.
+                </div>
               </div>
             </form>
           </div>
@@ -293,6 +323,7 @@
         </div>
       </div>
     </div>
+
     <div
       class="modal fade"
       id="login"
@@ -314,14 +345,31 @@
           <div class="modal-body">
             <div class="mb-3">
               <label for="login-email" class="col-form-label">Email:</label>
-              <input type="email" class="form-control" id="login-email" />
+              <input
+                type="email"
+                class="form-control"
+                id="login-email"
+                required
+              />
             </div>
 
             <div class="mb-3">
               <label for="login-password" class="col-form-label"
                 >Password:</label
               >
-              <input type="password" class="form-control" id="login-password" />
+              <input
+                type="password"
+                class="form-control"
+                id="login-password"
+                required
+              />
+            </div>
+            <div
+              class="invalid-feedback"
+              style="display: none"
+              id="login-error"
+            >
+              Invalid username or password.
             </div>
             <div class="form-check"></div>
           </div>
@@ -340,7 +388,6 @@
         </div>
       </div>
     </div>
-
     <!-- Container div that centers content and allows for a flexible layout that fills the viewport -->
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <!-- Header section for branding and navigation -->

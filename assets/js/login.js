@@ -28,6 +28,14 @@ if (document.readyState === 'loading') {
   setupLogin();
 }
 
+document.getElementById('login-email').addEventListener('focus', function() {
+  document.getElementById('login-error').style.display = 'none';
+});
+document.getElementById('login-password').addEventListener('focus', function() {
+  document.getElementById('login-error').style.display = 'none';
+});
+
+
 // Login function
 
 const app = initializeApp(firebaseConfig);
@@ -54,7 +62,9 @@ async function login() {
       } catch (error) {
         console.error(error);
         console.log('Login failed!');
+        const loginErrorDiv = document.getElementById('login-error');
+        loginErrorDiv.style.display = 'block';
+        loginErrorDiv.textContent = 'Invalid username or password. Please try again.';
       }
 
 }
-

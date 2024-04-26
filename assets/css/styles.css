@@ -109,5 +109,11 @@ body {
   overflow-y: auto; /* Adds scroll to this container if content overflows */
 }
 
+.valid {
+  color: green;
+}
 
+.invalid {
+  color: red;
+}
 
