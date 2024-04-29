@@ -122,7 +122,7 @@ function setupWebSocket() {
     // Get the Firebase token from local storage
     const token = localStorage.getItem('firebaseToken');
 
-    socket = new WebSocket(`ws://127.0.0.1:8000/api/chat/ws/aschat?token=${encodeURIComponent(token)}`);
+    socket = new WebSocket(`wss://api.techxflow.xyz/api/chat/ws/aschat?token=${encodeURIComponent(token)}`);
 
     socket.onopen = function(event) {
         console.log("WebSocket is open now.");
