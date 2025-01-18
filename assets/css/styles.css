@@ -1,6 +1,6 @@
 /* Style adjustments for Bootstrap icons */
 .bi {
-  vertical-align: -.125em; /* Aligns the icon slightly above the baseline */
+  vertical-align: -0.125em; /* Aligns the icon slightly above the baseline */
   fill: currentColor; /* Icon color will be the same as the text color */
 }
 
@@ -18,8 +18,12 @@
   --bs-btn-hover-color: var(--bs-white); /* Text color on hover */
   --bs-btn-hover-bg: #6528e0; /* Background color on hover */
   --bs-btn-hover-border-color: #6528e0; /* Border color on hover */
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb); /* Shadow color when button is focused */
-  --bs-btn-active-color: var(--bs-btn-hover-color); /* Text color when button is active */
+  --bs-btn-focus-shadow-rgb: var(
+    --bd-violet-rgb
+  ); /* Shadow color when button is focused */
+  --bs-btn-active-color: var(
+    --bs-btn-hover-color
+  ); /* Text color when button is active */
   --bs-btn-active-bg: #5a23c8; /* Background color when button is active */
   --bs-btn-active-border-color: #5a23c8; /* Border color when button is active */
 }
@@ -34,14 +38,13 @@
   display: block !important; /* Override other display properties */
 }
 
-
 /*
  * Base structure
  */
 
 /* Adds a shadow to the text for all body content */
 body {
-  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5); /* Shadow for a 3D effect on text */
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5); /* Shadow for a 3D effect on text */
 }
 
 /* Limits the maximum width of the container for a centered look */
@@ -63,14 +66,19 @@ body {
 
 /* Style for navigation links within the masthead */
 .nav-masthead .nav-link {
-  color: rgba(255, 255, 255, .5); /* Semi-transparent white color */
-  border-bottom: .25rem solid transparent; /* Transparent border for a consistent link size */
+  color: rgba(255, 255, 255, 0.5); /* Semi-transparent white color */
+  border-bottom: 0.25rem solid transparent; /* Transparent border for a consistent link size */
 }
 
 /* Hover and focus effects for navigation links */
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25); /* Changes border color on hover/focus */
+  border-bottom-color: rgba(
+    255,
+    255,
+    255,
+    0.25
+  ); /* Changes border color on hover/focus */
 }
 
 /* Spacing for nav links to separate them from each other */
@@ -117,3 +125,39 @@ body {
   color: red;
 }
 
+.pointer-cursor {
+  cursor: pointer;
+}
+
+/* Gallery image container styles */
+.image-container {
+  height: 200px; /* Fixed height for all containers */
+  width: auto; /* Width will adjust based on content */
+  overflow: hidden; /* Hide overflow if image is larger */
+  margin-bottom: 15px; /* Add some spacing between rows */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.image-container img {
+  height: 100%; /* Make image fill container height */
+  width: auto; /* Width will adjust automatically */
+  object-fit: cover; /* Maintain aspect ratio while covering container */
+  object-position: center; /* Center the image within container */
+}
+
+/* Flowchart container styles */
+.image-container.flowchart {
+  height: 100%; /* Take full height of parent */
+  width: 100%; /* Full width of container */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.image-container.flowchart img {
+  width: 100%; /* Full width */
+  height: auto; /* Height adjusts automatically */
+  object-fit: contain; /* Ensures entire image is visible */
+}
