@@ -486,10 +486,16 @@
           >
             <!-- Single item in the grid -->
             <div class="col d-flex align-items-start">
-              <!-- Link styled as a button or clickable area -->
-              <a
+              <span
                 class="link-body-emphasis text-decoration-none"
-                href="https://mklobucaric.github.io/index_de.html"
+                data-bs-toggle="popover"
+                title="Mission & Vision"
+                data-bs-placement="top"
+                id="missionPopover"
+                role="button"
+                tabindex="0"
+                data-bs-content="<strong>Vision</strong><br>Ein Katalysator für technologische Transformation zu sein, der eine prosperierendere und gerechtere Zukunft schafft, in der modernste KI und neue Technologien das menschliche Potenzial fördern und reale Herausforderungen lösen.<br><br><strong>Mission</strong><br>Wir erforschen, entwickeln und implementieren hochmoderne KI-Lösungen und neue Technologien mit Agilität und Exzellenz. Indem wir die Lücke zwischen Innovation und praktischer Anwendung überbrücken, befähigen wir Unternehmen und Gemeinschaften, im digitalen Zeitalter zu gedeihen, während wir einen menschenzentrierten Ansatz für den technologischen Fortschritt beibehalten."
+                data-bs-html="true"
               >
                 <!-- Icon preceding the text, using SVG -->
                 <svg
@@ -500,8 +506,8 @@
                   <use xlink:href="#globe2" />
                 </svg>
                 <!-- Text label for the link -->
-                <span class="fw-bold mb-0 fs-4">Über mich</span>
-              </a>
+                <span class="fw-bold mb-0 fs-4">Mission</span>
+              </span>
             </div>
             <div class="col d-flex align-items-start">
               <span
@@ -755,6 +761,12 @@
                     Informationen zu aktiven Ausschreibungen und Zuschüssen.
                   </li>
                 </ul>
+                <p>
+                  Link:
+                  <a href="https://vireas.rea-sjever.hr/"
+                    >vireas.rea-sjever.hr</a
+                  >
+                </p>
 
                 <!-- Platform Screenshots -->
                 <h5 class="mt-4 mb-3">Webanwendung Screenshots</h5>
@@ -1466,39 +1478,6 @@
           <!-- List of social media and personal links, styled without default list styling and displayed as a flexbox row -->
           <ul class="list-unstyled d-flex">
             <!-- Each item is a link to a personal or social media page, with an accompanying icon represented as an SVG -->
-            <li>
-              <a class="link-body-emphasis" href="https://mklobucaric.github.io"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#globe2" />
-                </svg>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a
-                class="link-body-emphasis"
-                href="https://www.linkedin.com/in/mklobucaric"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#linkedin" />
-                </svg>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a
-                class="link-body-emphasis"
-                href="https://github.com/mklobucaric"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#github" />
-                </svg>
-              </a>
-            </li>
-            <!-- Example of a hidden link, potentially for future use or conditional display -->
-            <li class="ms-3">
-              <a class="link-body-emphasis d-none" href="#"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#twitter-x" />
-                </svg>
-              </a>
-            </li>
           </ul>
         </div>
       </footer>

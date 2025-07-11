@@ -485,10 +485,16 @@
           >
             <!-- Single item in the grid -->
             <div class="col d-flex align-items-start">
-              <!-- Link styled as a button or clickable area -->
-              <a
+              <span
                 class="link-body-emphasis text-decoration-none"
-                href="https://mklobucaric.github.io"
+                data-bs-toggle="popover"
+                title="Mission & Vision"
+                data-bs-placement="top"
+                id="missionPopover"
+                role="button"
+                tabindex="0"
+                data-bs-content="<strong>Vision</strong><br>To be a catalyst for technological transformation that creates a more prosperous and equitable future, where cutting-edge AI and emerging technologies enhance human potential and solve real-world challenges.<br><br><strong>Mission</strong><br>We explore, develop, and implement state-of-the-art AI solutions and emerging technologies with agility and excellence. By bridging the gap between innovation and practical application, we empower businesses and communities to thrive in the digital age while maintaining a human-centric approach to technological progress."
+                data-bs-html="true"
               >
                 <!-- Icon preceding the text, using SVG -->
                 <svg
@@ -499,8 +505,8 @@
                   <use xlink:href="#globe2" />
                 </svg>
                 <!-- Text label for the link -->
-                <span class="fw-bold mb-0 fs-4">Personal Site</span>
-              </a>
+                <span class="fw-bold mb-0 fs-4">Mission</span>
+              </span>
             </div>
             <div class="col d-flex align-items-start">
               <span
@@ -753,6 +759,12 @@
                     grants.
                   </li>
                 </ul>
+                <p>
+                  link:
+                  <a href="https://vireas.rea-sjever.hr/"
+                    >vireas.rea-sjever.hr</a
+                  >
+                </p>
 
                 <!-- Platform Screenshots -->
                 <h5 class="mt-4 mb-3">Web Application Screenshots</h5>
@@ -1448,31 +1460,6 @@
           <!-- List of social media and personal links, styled without default list styling and displayed as a flexbox row -->
           <ul class="list-unstyled d-flex">
             <!-- Each item is a link to a personal or social media page, with an accompanying icon represented as an SVG -->
-            <li>
-              <a class="link-body-emphasis" href="https://mklobucaric.github.io"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#globe2" />
-                </svg>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a
-                class="link-body-emphasis"
-                href="https://www.linkedin.com/in/mklobucaric"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#linkedin" />
-                </svg>
-              </a>
-            </li>
-            <li class="ms-3">
-              <a
-                class="link-body-emphasis"
-                href="https://github.com/mklobucaric"
-                ><svg class="bi" width="24" height="24">
-                  <use xlink:href="#github" />
-                </svg>
-              </a>
-            </li>
             <!-- Example of a hidden link, potentially for future use or conditional display -->
             <li class="ms-3">
               <a class="link-body-emphasis d-none" href="#"
