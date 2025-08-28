@@ -194,24 +194,6 @@
       </div>
     </div>
 
-    <!-- Button that opens chat, fixed to the bottom-right of the viewport -->
-    <div class="position-fixed bottom-0 end-0 mb-3 me-3">
-      <!-- Button that opens chat, styled with Bootstrap and custom classes -->
-      <button
-        class="btn btn-bd-primary py-2 d-flex align-items-center"
-        id="bd-chat"
-        type="button"
-      >
-        <!-- SVG icon for the button, using a symbols -->
-        <svg class="bi my-1" width="2em" height="2em">
-          <use href="#chat"></use>
-        </svg>
-        <!-- Text label for the button -->
-        <span class="ms-3" id="bd-chat-text">Chat/RAG</span>
-      </button>
-      <!-- Aligned to the end (right) of the button with a shadow effect -->
-    </div>
-
     <div
       class="modal fade"
       id="register"
@@ -430,9 +412,6 @@
               </a>
               <a class="nav-link fw-bold py-1 px-0" href="#examples"
                 >AI primjene
-              </a>
-              <a class="nav-link fw-bold py-1 px-0" href="#ai-novel"
-                >AI novele
               </a>
 
               <!-- Language selection links with flags as indicators -->
@@ -1240,215 +1219,7 @@
             </div>
           </div>
         </div>
-
-        <!-- Section title - AI novel -->
-        <h2 class="pb-1 border-bottom" id="ai-novel">
-          AI generirane sci-fi novele
-        </h2>
-
-        <div class="accordion accordion-flush py-2" id="accordionAINovel">
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#flush-collapseAINovel"
-                aria-expanded="false"
-                aria-controls="flush-collapseAINovel"
-              >
-                Razgovarajte s LLM-om o novelama pohranjenim u bazi podataka i
-                dohvaćenim pomoću RAG tehnologije. Poglavlja novela:
-              </button>
-            </h2>
-            <div
-              id="flush-collapseAINovel"
-              class="accordion-collapse collapse"
-              data-bs-parent="#accordionAINovel"
-            >
-              <div class="accordion-body">
-                <h5>Beyond Boundaries: A Journey Through Future's Veil</h5>
-                <h6>Main Chapters (Areas of Technology Application)</h6>
-                <br />
-                <h6>The Body Reimagined &amp; Enhanced</h6>
-                <br />
-                <p>
-                  Subchapter: Designer Genes: Editing the human genome promises
-                  cures, and eliminates hereditary diseases, but also opens the
-                  door to manufactured inequalities.
-                </p>
-                <p>
-                  Subchapter: Cyborg Symbiosis: Implants and neural links
-                  enhance cognition and physical abilities, blurring the lines
-                  between human and machine.
-                </p>
-                <p>
-                  Subchapter: Perpetual Lifespans: Advanced medical tech and
-                  cellular regeneration drastically extend lifespans.
-                  Regeneration tech and nanomedicine offer extreme lifespans.
-                </p>
-                <p>
-                  Subchapter: The Merge of Mind &amp; Machine: Implants, neural
-                  links, and potential uploads – where does the human mind end
-                  and the machine begin?
-                </p>
-                <br />
-                <h6>
-                  When Machines Do the Work: Labor, Governance &amp; a Shifting
-                  Society
-                </h6>
-                <br />
-                <p>
-                  Subchapter: The End of Jobs as We Know Them: AI and robotics
-                  automate vast sectors of the economy, run cities and logistics
-                  systems, promising optimization, leading to widespread
-                  unemployment and social upheaval.
-                </p>
-                <p>
-                  Subchapter: Surveillance Singularity: Omnipresent surveillance
-                  raises questions of privacy, individual freedom and democratic
-                  values, while AIs profile citizens to predict and prevent
-                  criminal behavior.
-                </p>
-                <p>
-                  Subchapter: Hivemind Collaboration: Humans merge with AI
-                  systems to form collective intelligence, revolutionizing
-                  fields like science and problem-solving.
-                </p>
-                <p>
-                  Subchapter: Virtual Economies: Entirely new occupations emerge
-                  in fully immersive VR worlds, offering both opportunity and
-                  the risk of escapism.
-                </p>
-                <p>
-                  Subchapter: Universal Basic Income: Guaranteed Sustenance or
-                  Crushing Dependency? Can new economic models ensure societal
-                  stability in a future of limited labor?
-                </p>
-                <br />
-                <h6>Planetary Engineering: Reshaping Our World</h6>
-                <br />
-                <p>
-                  Subchapter: Nano-Swarms: Self-replicating nanobots cleanse the
-                  oceans of pollution and reshape damaged ecosystems, but what
-                  if they turn against humanity?
-                </p>
-                <p>
-                  Subchapter: Geoengineering Earth: Desperate interventions to
-                  combat climate change carry environmental risks and
-                  geopolitical tensions.
-                </p>
-                <p>
-                  Subchapter: Smart Megacities: AI-managed, interconnected urban
-                  sprawls offer efficiency, hyper-surveillance, and the
-                  potential for social control.
-                </p>
-                <br />
-                <h6>Mind Over Matter: AI, Consciousness &amp; Ethics</h6>
-                <br />
-                <p>
-                  Subchapter: Digital Afterlife: Is it possible to upload
-                  consciousness? What are the implications for mortality and the
-                  soul?
-                </p>
-                <p>
-                  Subchapter: Emotional AI: Relationships with sentient AI
-                  companions raise questions about the nature of love and
-                  manipulation.
-                </p>
-                <p>
-                  Subchapter: Digital Consciousness: Should a sufficiently
-                  complex and sentient AI gain the same rights and protections
-                  as biological humans?
-                </p>
-                <br />
-                <h6>To the Stars &amp; Beyond</h6>
-                <br />
-                <p>
-                  Subchapter: Terraforming Mars: Humanity begins to colonize
-                  Mars, dealing with challenges like low gravity, radiation, and
-                  psychological isolation on settlers.
-                </p>
-                <p>
-                  Subchapter: The Orbital City: Vast orbital habitats provide an
-                  escape from a crowded Earth, creating a new class divide
-                  between those above and those below.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </main>
-
-      <!-- Offcanvas component, positioned at the end (right side) of the viewport -->
-      <div
-        class="offcanvas offcanvas-end d-flex flex-column"
-        data-bs-scroll="true"
-        tabindex="-1"
-        id="offcanvasChat"
-        aria-labelledby="offcanvasChatLabel"
-      >
-        <!-- Header of the offcanvas component -->
-        <div class="offcanvas-header">
-          <!-- Title for the offcanvas content -->
-          <h5 class="offcanvas-title" id="offcanvasChatLabel">
-            AI Retrieval Augmented Generation Chat
-          </h5>
-          <!-- Button to close the offcanvas component -->
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <!-- Body section of the offcanvas component -->
-        <div
-          class="offcanvas-body offcanvas-body d-flex flex-column flex-grow-1"
-        >
-          <!-- Container for chat messages -->
-          <div id="chat-messages" style="flex-grow: 1 overflow-auto">
-            <div>
-              Dobrodošli u RAG AI Chatbot! Ovdje možete zaroniti u
-              znanstveno-fantastične novele generirane umjetnom inteligencijom.
-              Svako podpoglavlje predstavlja jedinstveni narativni zaokret i
-              razvoj događaja. Za početak, jednostavno pitajte chatbota o bilo
-              kojim elementima ili detaljima unutar podpoglavlja koje vas
-              zanima. Popis sadržaja možete pronaći pod odjeljkom 'AI generirane
-              sci-fi novele' na ovoj web stranici. Ako želite razgovarati o
-              nekom drugom potpoglavlju, kliknite gumb 'Reset' kako biste
-              promijenili fokus razgovora. Uživajte u putovanju kroz ovu
-              futurističku sagu!
-            </div>
-          </div>
-
-          <!-- Form for user to input new message -->
-          <form id="chat-form" class="mt-auto">
-            <div class="mb-3">
-              <label for="chat-input" class="form-label">Your query:</label>
-              <textarea
-                class="form-control"
-                id="chat-input"
-                rows="3"
-              ></textarea>
-            </div>
-            <div class="d-flex justify-content-end">
-              <!-- Reset button -->
-              <button
-                type="reset"
-                class="btn btn-secondary me-2"
-                id="chatbot-reset"
-              >
-                Reset
-              </button>
-              <!-- Send button -->
-              <button type="button" class="btn btn-primary" id="chatbot-send">
-                Send
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
 
       <!-- Footer section, automatically sticking to the bottom of the viewport if the content is shorter than the viewport -->
       <footer class="footer mt-auto text-white-50 py-3">
@@ -1481,6 +1252,5 @@
     <!-- Script tag for custom JavaScript scripts specific to the site or application -->
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/login.js" type="module"></script>
-    <script src="assets/js/chatbot.js"></script>
   </body>
 </html>

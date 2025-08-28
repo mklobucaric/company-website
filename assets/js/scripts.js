@@ -2,16 +2,12 @@
 
 var loginModal;
 var registerModal;
-var offcanvasChat;
 // Set the firebaseToken variable in local storage to an empty string or null as the initial value
 localStorage.setItem("firebaseToken", "");
 
 document.addEventListener("DOMContentLoaded", () => {
   loginModal = new bootstrap.Modal(document.getElementById("login"));
   registerModal = new bootstrap.Modal(document.getElementById("register"));
-  offcanvasChat = new bootstrap.Offcanvas(
-    document.getElementById("offcanvasChat")
-  );
   quotaModal = new bootstrap.Modal(document.getElementById("quotaModal"));
 
   // Attempt to find the element for mobile popover by its ID
@@ -53,65 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Set up an event listener for when the offcanvas chat element finishes its closing transition
-  document
-    .getElementById("offcanvasChat")
-    .addEventListener("hidden.bs.offcanvas", function () {
-      // This function will contain logic to handle the chat closing,
-      // such as disconnecting from chat services or clearing chat history and show chat button
-      closeChat();
-    });
-
-  // Set up an event listener for when any modal is hidden
-  document.querySelectorAll(".modal").forEach((modal) => {
-    modal.addEventListener("hidden.bs.modal", function () {
-      // Call the closeChat() function when any modal is hidden
-      closeChat();
-    });
-  });
-
-  // Set up an event listener for when any modal is shown
-  document.querySelectorAll(".modal").forEach((modal) => {
-    modal.addEventListener("shown.bs.modal", function () {
-      // Hide the chat button when any modal is shown
-      document.getElementById("bd-chat").classList.add("d-none");
-    });
-  });
-
-  const chatButton = document.getElementById("bd-chat");
-  if (chatButton) {
-    chatButton.addEventListener("click", openChat);
-  }
-
   const registerButton = document.getElementById("register-submit");
   if (registerButton) {
     registerButton.addEventListener("click", register);
   }
 });
-
-// Function to open the offcanvas chat and hide the dropdown
-function openChat() {
-  document.getElementById("bd-chat").classList.add("d-none");
-
-  // Check if a Firebase token is present in local storage
-  const token = localStorage.getItem("firebaseToken");
-
-  // If a token is not present, display the modal
-  if (!token) {
-    loginModal.show();
-  }
-  // If a token is present, show the offcanvas chat
-  else {
-    // Show the offcanvas component
-    offcanvasChat.show();
-  }
-}
-
-// Function to close the offcanvas chat and show the button
-function closeChat() {
-  // Show the chat dropdown button
-  document.getElementById("bd-chat").classList.remove("d-none");
-}
 
 async function register() {
   const firstName = document.getElementById("register-first").value;
