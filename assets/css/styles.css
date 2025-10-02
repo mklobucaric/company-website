@@ -161,3 +161,31 @@ body {
   height: auto; /* Height adjusts automatically */
   object-fit: contain; /* Ensures entire image is visible */
 }
+
+/* Accordion content improvements for better readability and visual hierarchy */
+.accordion-body {
+  padding: 1.5rem 1.25rem; /* Increased padding for more breathing room */
+}
+
+.accordion-body ul {
+  margin-bottom: 0;
+  padding-left: 1.5rem;
+}
+
+.accordion-body ul li {
+  margin-bottom: 1.25rem; /* Vertical spacing between list items */
+  line-height: 1.7; /* Improved readability with increased line height */
+  padding-bottom: 1rem; /* Space before separator */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle visual separator */
+}
+
+.accordion-body ul li:last-child {
+  margin-bottom: 0; /* Remove margin from last item */
+  padding-bottom: 0; /* Remove padding from last item */
+  border-bottom: none; /* Remove border from last item */
+}
+
+.accordion-body strong {
+  font-size: 1.05rem; /* Slightly larger for emphasis */
+  color: rgba(255, 255, 255, 0.95); /* Brighter for visual hierarchy */
+}
