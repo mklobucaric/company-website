@@ -240,38 +240,44 @@
         <h2>Spremni Za Isprobati?</h2>
         <p>Besplatna probna verzija - bez kreditne kartice</p>
 
-        <div class="contact-options">
-          <div class="contact-option">
-            <h3>📧 Kontaktirajte Nas Emailom</h3>
-            <p>
-              Kliknite gumb ispod i pošaljite nam zahtjev kroz vaš email program
-            </p>
-            <a
-              href="mailto:x@techxflow.xyz?subject=Zahtjev za demo verziju medicinske transkripcije&body=Poštovani,%0D%0A%0D%0AŽelim zatražiti demo ili probnu verziju aplikacije za medicinsku transkripciju.%0D%0A%0D%0AIme i prezime:%0D%0ASpecijalizacija:%0D%0ATelefon (opciono):%0D%0A%0D%0APoruka ili pitanja:%0D%0A%0D%0A%0D%0ASrdačan pozdrav"
-              class="cta-button"
-              style="margin-top: 20px"
-            >
-              Pošalji Email
-            </a>
-          </div>
+        <div style="max-width: 600px; margin: 0 auto;">
+          <form id="contactForm" style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+            <h3 style="color: #0066cc; margin-bottom: 30px; text-align: center;">Zatražite Demo ili Probnu Verziju</h3>
 
-          <div class="contact-option-divider">
-            <span>ili</span>
-          </div>
+            <div style="margin-bottom: 20px;">
+              <label for="name" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Ime i Prezime *</label>
+              <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            </div>
 
-          <div class="contact-option">
-            <h3>📝 Ispunite Obrazac</h3>
-            <p>Popunite Google formular i javit ćemo vam se u najkraćem roku</p>
-            <a
-              href="https://forms.gle/u3pitvuRqZ4PxhFCA"
-              class="cta-button cta-button-secondary"
-              style="margin-top: 20px"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Otvori Obrazac
-            </a>
-          </div>
+            <div style="margin-bottom: 20px;">
+              <label for="email" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Email *</label>
+              <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="phone" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="+385..." style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="organization" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Organizacija/tvrtka</label>
+              <input type="text" id="organization" name="organization" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="specialty" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Specijalizacija</label>
+              <input type="text" id="specialty" name="specialty" placeholder="npr. Interna medicina, Kardiologija" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <label for="message" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Poruka (opciono)</label>
+              <textarea id="message" name="message" rows="4" placeholder="Imate li pitanja ili posebne zahtjeve?" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; resize: vertical; box-sizing: border-box;"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="cta-button" style="width: 100%; padding: 15px; font-size: 1.1rem; border: none; cursor: pointer;">
+              Pošalji Zahtjev
+            </button>
+          </form>
         </div>
 
         <div
@@ -297,7 +303,7 @@
         <p>
           <a href="politika-privatnosti.html">Politika Privatnosti</a> |
           <a href="uvjeti-koristenja.html">Uvjeti Korištenja</a> |
-          <a href="https://techxflow.xyz/index_hr.html">Webstranica tvrtke</a>
+          <a href="mailto:x@techxflow.xyz?subject=Zahtjev za demo verziju medicinske transkripcije&body=Poštovani,%0D%0A%0D%0AŽelim zatražiti demo ili probnu verziju aplikacije za medicinsku transkripciju.%0D%0A%0D%0AIme i prezime:%0D%0ASpecijalizacija:%0D%0ATelefon (opciono):%0D%0A%0D%0APoruka ili pitanja:%0D%0A%0D%0A%0D%0ASrdačan pozdrav">Kontakt</a>
         </p>
         <p style="margin-top: 20px; font-size: 0.9rem">
           📧 x@techxflow.xyz | 📞 +385 99 265 63 98 | 🌐 <a href="https://techxflow.xyz/" style="color: #4a90e2;">techxflow.xyz</a>
