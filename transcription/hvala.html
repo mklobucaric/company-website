@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hvala na interesu | Medicinska Transkripcija</title>
 
     <!-- Google Ads Conversion Tracking -->
@@ -14,169 +14,172 @@
     -->
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0066CC 0%, #4A90E2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0066cc 0%, #4a90e2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
 
-        .container {
-            background: white;
-            border-radius: 15px;
-            padding: 60px 40px;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
+      .container {
+        background: white;
+        border-radius: 15px;
+        padding: 60px 40px;
+        max-width: 600px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      }
 
-        .checkmark {
-            width: 80px;
-            height: 80px;
-            background-color: #28a745;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            animation: scaleIn 0.5s ease-out;
-        }
+      .checkmark {
+        width: 80px;
+        height: 80px;
+        background-color: #28a745;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        animation: scaleIn 0.5s ease-out;
+      }
 
-        .checkmark svg {
-            width: 50px;
-            height: 50px;
-            fill: white;
-        }
+      .checkmark svg {
+        width: 50px;
+        height: 50px;
+        fill: white;
+      }
 
-        @keyframes scaleIn {
-            0% {
-                transform: scale(0);
-            }
-            100% {
-                transform: scale(1);
-            }
+      @keyframes scaleIn {
+        0% {
+          transform: scale(0);
         }
+        100% {
+          transform: scale(1);
+        }
+      }
 
-        h1 {
-            color: #0066CC;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+      h1 {
+        color: #0066cc;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
 
-        .subtitle {
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
+      .subtitle {
+        font-size: 1.3rem;
+        color: #666;
+        margin-bottom: 30px;
+      }
 
-        .info-box {
-            background-color: #f8f9fa;
-            border-left: 4px solid #0066CC;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: left;
-        }
+      .info-box {
+        background-color: #f8f9fa;
+        border-left: 4px solid #0066cc;
+        padding: 20px;
+        margin: 30px 0;
+        text-align: left;
+      }
 
-        .info-box h3 {
-            color: #0066CC;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
+      .info-box h3 {
+        color: #0066cc;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+      }
 
-        .info-box ul {
-            list-style: none;
-            padding: 0;
-        }
+      .info-box ul {
+        list-style: none;
+        padding: 0;
+      }
 
-        .info-box li {
-            padding: 8px 0;
-            color: #333;
-            font-size: 1rem;
-        }
+      .info-box li {
+        padding: 8px 0;
+        color: #333;
+        font-size: 1rem;
+      }
 
-        .info-box li:before {
-            content: "✓ ";
-            color: #28a745;
-            font-weight: bold;
-            margin-right: 10px;
-        }
+      .info-box li:before {
+        content: "✓ ";
+        color: #28a745;
+        font-weight: bold;
+        margin-right: 10px;
+      }
 
-        .cta-button {
-            display: inline-block;
-            background-color: #0066CC;
-            color: white;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+      .cta-button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: white;
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: background-color 0.3s, transform 0.2s;
+      }
 
-        .cta-button:hover {
-            background-color: #0052a3;
-            transform: translateY(-2px);
-        }
+      .cta-button:hover {
+        background-color: #0052a3;
+        transform: translateY(-2px);
+      }
 
-        .contact-info {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #dee2e6;
-            color: #666;
-            font-size: 0.95rem;
-        }
+      .contact-info {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid #dee2e6;
+        color: #666;
+        font-size: 0.95rem;
+      }
 
-        .contact-info a {
-            color: #0066CC;
-            text-decoration: none;
-        }
+      .contact-info a {
+        color: #0066cc;
+        text-decoration: none;
+      }
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="checkmark">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                <path d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-            </svg>
-        </div>
+      <div class="checkmark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <path d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+      </div>
 
-        <h1>Hvala Vam!</h1>
-        <p class="subtitle">Uspješno ste poslali zahtjev za demo verziju.</p>
+      <h1>Hvala Vam!</h1>
+      <p class="subtitle">Uspješno ste poslali zahtjev za demo verziju.</p>
 
-        <div class="info-box">
-            <h3>Što je sljedeće?</h3>
-            <ul>
-                <li>Javit ćemo vam se u roku od <strong>24 sata</strong></li>
-                <li>Odgovoriti na sva vaša pitanja</li>
-                <li>Ako vam odgovara, možete <strong>odmah početi koristiti</strong></li>
-            </ul>
-        </div>
+      <div class="info-box">
+        <h3>Što je sljedeće?</h3>
+        <ul>
+          <li>Javit ćemo vam se u roku od <strong>24 sata</strong></li>
+          <li>Odgovoriti na sva vaša pitanja</li>
+          <li>
+            Ako vam odgovara, možete <strong>odmah početi koristiti</strong>
+          </li>
+        </ul>
+      </div>
 
-        <a href="medicinska-transkripcija-landing.html" class="cta-button">
-            Povratak na Početnu
-        </a>
+      <a href="medicinska-transkripcija-landing.html" class="cta-button">
+        Povratak na Početnu
+      </a>
 
-        <div class="contact-info">
-            <p><strong>Imate hitno pitanje?</strong></p>
-            <p>
-                📧 Email: <a href="mailto:x@techxflow.xyz">x@techxflow.xyz</a><br>
-                📞 Telefon: <a href="tel:+385992656398">+385 99 265 63 98</a>
-            </p>
-        </div>
+      <div class="contact-info">
+        <p><strong>Imate hitno pitanje?</strong></p>
+        <p>
+          📧 Email: <a href="mailto:info@techxflow.eu">info@techxflow.eu</a
+          ><br />
+          📞 Telefon: <a href="tel:+385992656398">+385 99 265 63 98</a>
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

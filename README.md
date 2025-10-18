@@ -13,6 +13,6 @@ This repository contains the HTML, CSS, and JavaScript code for the techXflow's 
 
 ## Contact
 
-Mario Klobučarić - [x@techxflow.xyz](x@techxflow.xyz) 
+Mario Klobučarić - [info@techxflow.eu](info@techxflow.eu)
 
 Website Link: [techxflow.xyz](https://techxflow.xyz)

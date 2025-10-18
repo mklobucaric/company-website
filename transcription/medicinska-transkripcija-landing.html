@@ -8,7 +8,7 @@
       content="Medicinska transkripcija za liječnike - brza i precizna glasovna transkripcija na hrvatskom jeziku"
     />
     <title>Medicinska Transkripcija | Softver za Liječnike</title>
-    <link rel="stylesheet" href="css/landing-styles.css">
+    <link rel="stylesheet" href="css/landing-styles.css" />
   </head>
   <body>
     <!-- Header Hero -->
@@ -88,12 +88,19 @@
         <h2 style="color: #0066cc; font-size: 2rem; margin-bottom: 20px">
           Pogledajte Kako Radi
         </h2>
-        <div style="max-width: 800px; margin: 30px auto;">
+        <div style="max-width: 800px; margin: 30px auto">
           <video
             controls
-            style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);"
+            style="
+              width: 100%;
+              border-radius: 10px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            "
           >
-            <source src="../assets/transcription/Transkripcija_govora.mp4" type="video/mp4">
+            <source
+              src="../assets/transcription/Transkripcija_govora.mp4"
+              type="video/mp4"
+            />
             Vaš preglednik ne podržava video tag.
           </video>
         </div>
@@ -240,41 +247,194 @@
         <h2>Spremni Za Isprobati?</h2>
         <p>Besplatna probna verzija - bez kreditne kartice</p>
 
-        <div style="max-width: 600px; margin: 0 auto;">
-          <form id="contactForm" style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
-            <h3 style="color: #0066cc; margin-bottom: 30px; text-align: center;">Zatražite Demo ili Probnu Verziju</h3>
+        <div style="max-width: 600px; margin: 0 auto">
+          <form
+            id="contactForm"
+            style="
+              background: white;
+              padding: 40px;
+              border-radius: 15px;
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            "
+          >
+            <h3 style="color: #0066cc; margin-bottom: 30px; text-align: center">
+              Zatražite Demo ili Probnu Verziju
+            </h3>
 
-            <div style="margin-bottom: 20px;">
-              <label for="name" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Ime i Prezime *</label>
-              <input type="text" id="name" name="name" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            <div style="margin-bottom: 20px">
+              <label
+                for="name"
+                style="
+                  display: block;
+                  margin-bottom: 8px;
+                  color: #333;
+                  font-weight: 500;
+                "
+                >Ime i Prezime *</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid #e0e0e0;
+                  border-radius: 8px;
+                  font-size: 1rem;
+                  box-sizing: border-box;
+                "
+              />
             </div>
 
-            <div style="margin-bottom: 20px;">
-              <label for="email" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Email *</label>
-              <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            <div style="margin-bottom: 20px">
+              <label
+                for="email"
+                style="
+                  display: block;
+                  margin-bottom: 8px;
+                  color: #333;
+                  font-weight: 500;
+                "
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid #e0e0e0;
+                  border-radius: 8px;
+                  font-size: 1rem;
+                  box-sizing: border-box;
+                "
+              />
             </div>
 
-            <div style="margin-bottom: 20px;">
-              <label for="phone" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Telefon</label>
-              <input type="tel" id="phone" name="phone" placeholder="+385..." style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            <div style="margin-bottom: 20px">
+              <label
+                for="phone"
+                style="
+                  display: block;
+                  margin-bottom: 8px;
+                  color: #333;
+                  font-weight: 500;
+                "
+                >Telefon</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+385..."
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid #e0e0e0;
+                  border-radius: 8px;
+                  font-size: 1rem;
+                  box-sizing: border-box;
+                "
+              />
             </div>
 
-            <div style="margin-bottom: 20px;">
-              <label for="organization" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Organizacija/tvrtka</label>
-              <input type="text" id="organization" name="organization" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            <div style="margin-bottom: 20px">
+              <label
+                for="organization"
+                style="
+                  display: block;
+                  margin-bottom: 8px;
+                  color: #333;
+                  font-weight: 500;
+                "
+                >Organizacija/tvrtka</label
+              >
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid #e0e0e0;
+                  border-radius: 8px;
+                  font-size: 1rem;
+                  box-sizing: border-box;
+                "
+              />
             </div>
 
-            <div style="margin-bottom: 20px;">
-              <label for="specialty" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Specijalizacija</label>
-              <input type="text" id="specialty" name="specialty" placeholder="npr. Interna medicina, Kardiologija" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; box-sizing: border-box;">
+            <div style="margin-bottom: 20px">
+              <label
+                for="specialty"
+                style="
+                  display: block;
+                  margin-bottom: 8px;
+                  color: #333;
+                  font-weight: 500;
+                "
+                >Specijalizacija</label
+              >
+              <input
+                type="text"
+                id="specialty"
+                name="specialty"
+                placeholder="npr. Interna medicina, Kardiologija"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid #e0e0e0;
+                  border-radius: 8px;
+                  font-size: 1rem;
+                  box-sizing: border-box;
+                "
+              />
             </div>
 
-            <div style="margin-bottom: 25px;">
-              <label for="message" style="display: block; margin-bottom: 8px; color: #333; font-weight: 500;">Poruka (opciono)</label>
-              <textarea id="message" name="message" rows="4" placeholder="Imate li pitanja ili posebne zahtjeve?" style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; resize: vertical; box-sizing: border-box;"></textarea>
+            <div style="margin-bottom: 25px">
+              <label
+                for="message"
+                style="
+                  display: block;
+                  margin-bottom: 8px;
+                  color: #333;
+                  font-weight: 500;
+                "
+                >Poruka (opciono)</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Imate li pitanja ili posebne zahtjeve?"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  border: 2px solid #e0e0e0;
+                  border-radius: 8px;
+                  font-size: 1rem;
+                  resize: vertical;
+                  box-sizing: border-box;
+                "
+              ></textarea>
             </div>
 
-            <button type="submit" id="submitBtn" class="cta-button" style="width: 100%; padding: 15px; font-size: 1.1rem; border: none; cursor: pointer;">
+            <button
+              type="submit"
+              id="submitBtn"
+              class="cta-button"
+              style="
+                width: 100%;
+                padding: 15px;
+                font-size: 1.1rem;
+                border: none;
+                cursor: pointer;
+              "
+            >
               Pošalji Zahtjev
             </button>
           </form>
@@ -290,7 +450,7 @@
         >
           <p style="font-size: 0.95rem; margin: 0">
             📞 <strong>Telefon:</strong> +385 99 265 63 98 &nbsp;|&nbsp; 📧
-            <strong>Email:</strong> x@techxflow.xyz
+            <strong>Email:</strong> info@techxflow.eu
           </p>
         </div>
       </div>
@@ -303,10 +463,16 @@
         <p>
           <a href="politika-privatnosti.html">Politika Privatnosti</a> |
           <a href="uvjeti-koristenja.html">Uvjeti Korištenja</a> |
-          <a href="mailto:x@techxflow.xyz?subject=Zahtjev za demo verziju medicinske transkripcije&body=Poštovani,%0D%0A%0D%0AŽelim zatražiti demo ili probnu verziju aplikacije za medicinsku transkripciju.%0D%0A%0D%0AIme i prezime:%0D%0ASpecijalizacija:%0D%0ATelefon (opciono):%0D%0A%0D%0APoruka ili pitanja:%0D%0A%0D%0A%0D%0ASrdačan pozdrav">Kontakt</a>
+          <a
+            href="mailto:info@techxflow.eu?subject=Zahtjev za demo verziju medicinske transkripcije&body=Poštovani,%0D%0A%0D%0AŽelim zatražiti demo ili probnu verziju aplikacije za medicinsku transkripciju.%0D%0A%0D%0AIme i prezime:%0D%0ASpecijalizacija:%0D%0ATelefon (opciono):%0D%0A%0D%0APoruka ili pitanja:%0D%0A%0D%0A%0D%0ASrdačan pozdrav"
+            >Kontakt</a
+          >
         </p>
         <p style="margin-top: 20px; font-size: 0.9rem">
-          📧 x@techxflow.xyz | 📞 +385 99 265 63 98 | 🌐 <a href="https://techxflow.xyz/" style="color: #4a90e2;">techxflow.xyz</a>
+          📧 info@techxflow.eu | 📞 +385 99 265 63 98 | 🌐
+          <a href="https://techxflow.xyz/" style="color: #4a90e2"
+            >techxflow.xyz</a
+          >
         </p>
       </div>
     </footer>
